@@ -1,4 +1,8 @@
 {
+  "name" : "tagsale",
+  "authors" : [
+    "Justin Falcone <justin@justinfalcone.com>"
+  ],
   "jspm": {
     "directories": {},
     "dependencies": {
@@ -9,5 +13,13 @@
       "babel-runtime": "npm:babel-runtime@^5.1.13",
       "core-js": "npm:core-js@^0.9.4"
     }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:modernserf/tagsale.git"
+  },
+  "license": "MIT",
+  "scripts": {
+    "start" : "jspm-server --port=4000"
   }
 }
