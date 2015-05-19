@@ -24,11 +24,25 @@ const state = {
             return Promise.reject("Required: tags");
         }
 
-        return db.post(data).then(() => {
+        return db.post(data).then((res) => {
+            data._id = res.id;
+            data._rev = res.rev;
             this.records.add(data);
             this._buildTagsFor(data);
+            this._didChange();
         });
     },
+    onChange (fn) {
+        this._changeListeners.push(fn);
+        return this;
+    },
+    _didChange () {
+        for (const l of this._changeListeners) {
+            l(this);
+        }
+        return this;
+    },
+    _changeListeners: [],
     _buildTagsFor (r) {
         for (const t of r.tags) {
             const tSet = this.tags.get(t);
@@ -40,6 +54,6 @@ const state = {
         }
         return this;
     }
-}
+};
 
-export default state.init();
+export default state;

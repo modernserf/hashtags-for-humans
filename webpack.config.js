@@ -19,7 +19,7 @@ for (var key in entryPoints) {
     entryPoints[key] = ['webpack/hot/dev-server', entryPoints[key]];
 }
 
-var babelConfig = "babel?stage=1&optional=runtime";
+var babelConfig = "babel?stage=0&optional=runtime";
 
 module.exports = {
     entry: entryPoints,

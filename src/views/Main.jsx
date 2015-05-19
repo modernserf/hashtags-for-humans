@@ -1,6 +1,6 @@
 import React from 'react';
 
-class Main extends React.Component {
+class NewRecord extends React.Component {
     constructor () {
         super();
         this.state = {
@@ -8,10 +8,11 @@ class Main extends React.Component {
             tags: ""
         };
     }
-    addRecord (e, state) {
+    addRecord (e) {
         e.preventDefault();
         const { summary, tags } = this.state;
-        state.addRecord({
+        const { data } = this.props;
+        data.addRecord({
             summary: summary,
             tags: tags.split(" ")
         }).then(() => {
@@ -22,13 +23,117 @@ class Main extends React.Component {
         });
     }
     render () {
-        const { state } = this.props;
         const { summary, tags } = this.state;
 
-        const records = [...state.records].map((r) =>
-            <li key={r._id}>{r.summary}</li>);
+        return (
+            <form onSubmit={(e) => this.addRecord(e)}>
+                <label>Summary</label>
+                <textarea value={summary}
+                    style={{height: 200}}
+                    onChange={(e) => this.setState({
+                        summary: e.target.value})}/>
+                <label>Tags</label>
+                <input value={tags}
+                    onChange={(e) => this.setState({
+                        tags: e.target.value})}/>
+                <button type="submit">Add</button>
+            </form>
+        );
+    }
+}
 
-        const tagItems = [...state.tags].map((t) => {
+class RecordCard extends React.Component {
+    render () {
+        const { data } = this.props;
+
+        const recordStyle = {
+            padding: 8,
+            border: "1px solid #ccc",
+            margin: 4
+        };
+
+        const tagGroupStyle = {
+            textAlign: "right",
+            paddingTop: 4,
+            color: "#999",
+            fontSize: 14
+        };
+
+        const tagStyle = {
+            display: "inline-block",
+            paddingLeft: 4
+        };
+
+        return (
+            <div style={recordStyle}>
+                <div>{data.summary}</div>
+                <ul style={tagGroupStyle}>
+                    {data.tags.map((t) =>
+                        <li style={tagStyle}
+                            key={t}>{"#" + t}</li>)}
+                </ul>
+            </div>
+        );
+    }
+}
+
+class RecordList extends React.Component {
+    constructor () {
+        super();
+        this.state = {
+            filterText: "",
+            showNewRecord: false
+        };
+    }
+    render () {
+        const { data } = this.props;
+        const { filterText, showNewRecord } = this.state;
+
+
+        // TODO: filter set directly
+        const records = filterText ?
+            [...data.records].filter(() => true) :
+            [...data.records];
+
+        const recordTags = records.map((r) =>
+            <li key={r._id}>
+                <RecordCard data={r}/>
+            </li>);
+
+        const newRecord = showNewRecord ? (
+            <div>
+                <NewRecord data={data}/>
+                <button type="button"
+                    onClick={() => this.setState({showNewRecord: false})}>
+                    Cancel
+                </button>
+            </div>
+        ) : (
+            <button type="button"
+                onClick={() => this.setState({showNewRecord: true})}>
+                + New Record
+            </button>
+        );
+
+        return (
+            <div>
+                <input type="search" placeholder="Find a record…"
+                    value={filterText}
+                    onChange={(e) => this.setState({
+                        filterText: e.target.value
+                    })}/>
+                {newRecord}
+                <ul>{recordTags}</ul>
+            </div>
+        );
+    }
+}
+
+class TagList extends React.Component {
+    render () {
+        const { data } = this.props;
+
+        const tags = [...data.tags].map((t) => {
             const [name] = t;
             return (
                 <li key={name}>{name}</li>
@@ -36,28 +141,74 @@ class Main extends React.Component {
         });
 
         return (
-            <div style={{
-                margin: "0 auto",
-                maxWidth: 800
-            }}>
-                <h2>Records</h2>
-                <ul>
-                    {records}
-                </ul>
-                <h2>Tags</h2>
-                <ul>{tagItems}</ul>
-                <form onSubmit={(e) => this.addRecord(e, state)}>
-                    <label>Summary</label>
-                    <textarea value={summary}
-                        style={{height: 400}}
-                        onChange={(e) => this.setState({
-                            summary: e.target.value})}/>
-                    <label>Tags</label>
-                    <input value={tags}
-                        onChange={(e) => this.setState({
-                            tags: e.target.value})}/>
-                    <button type="submit">Add</button>
-                </form>
+            <div>
+                <ul>{tags}</ul>
+            </div>
+        );
+    }
+}
+
+class Workspace extends React.Component {
+    render () {
+        const { data } = this.props;
+
+        const cols = [...data.tags].map((t) => {
+            const [name, records] = t;
+
+            const recordTags = [...records].map((r) =>
+                <li key={r._id}>
+                    <RecordCard data={r}/>
+                </li>);
+
+            return (
+                <div>
+                    <h3>{name}</h3>
+                    <ul>{recordTags}</ul>
+                </div>
+            );
+        });
+
+        return (
+            <div className="flex-row">
+                {cols}
+            </div>
+        );
+    }
+}
+
+class Main extends React.Component {
+    render () {
+        const { data } = this.props;
+
+        const flexItem = {
+            flex: "1 0 25%",
+            padding: 8
+        };
+
+        const flexItemBig = {
+            flex: "1 0 50%",
+            padding: 8
+        };
+
+        return (
+            <div>
+                <h1>tagsale</h1>
+                <div className="flex-row">
+                    <section style={flexItem}>
+                        <h2>Records</h2>
+                        <RecordList data={data}/>
+                    </section>
+
+                    <section style={flexItemBig}>
+                        <h2>Workspace</h2>
+                        <Workspace data={data}/>
+                    </section>
+
+                    <section style={flexItem}>
+                        <h2>Tags</h2>
+                        <TagList data={data}/>
+                    </section>
+                </div>
             </div>
         );
     }

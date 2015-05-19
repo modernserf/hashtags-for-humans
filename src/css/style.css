@@ -1,0 +1,44 @@
+* {
+    position: relative;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+    display: block;
+}
+
+p a {
+    text-decoration: underline;
+    display: inline;
+}
+
+html {
+    font-family: sans-serif;
+}
+
+label, input, textarea {
+    display: block;
+    width: 100%;
+}
+
+.flex-row {
+    display: flex;
+    flex-direction: row;
+}
+
+h1 {
+    font-size: 36px;
+    padding-bottom: 12px;
+}
+
+h2 {
+    font-size: 24px;
+    padding-bottom: 12px;
+}
+
+h3 {
+    font-size: 16px;
+    padding-bottom: 8px;
+    font-weight: bold;
+}

@@ -1,8 +1,10 @@
 import 'babel/polyfill';
 import 'whatwg-fetch';
+import 'css/reset.css';
+import 'css/style.css';
 
 import React from 'react';
-import initState from 'state';
+import state from 'state';
 import Main from 'views/Main';
 
 const domLoaded = new Promise((resolve) => {
@@ -13,10 +15,15 @@ const domLoaded = new Promise((resolve) => {
     }
 });
 
-Promise.all([initState, domLoaded]).then((res) => {
-    let [state] = res;
+const render = (data) => {
     React.render(
-        React.createFactory(Main)({state: state}),
+        React.createFactory(Main)({data: data}),
         document.getElementById('app')
     );
+};
+
+Promise.all([state.init(), domLoaded]).then((res) => {
+    const [data] = res;
+    render(data);
+    data.onChange(render);
 });
