@@ -1,9 +1,18 @@
 import PouchDB from 'pouchdb';
+import sampleData from 'sample-data.json';
+
 window.PouchDB = PouchDB;
 PouchDB.debug.enable('*');
 
-const db = new PouchDB('records');
+let db = new PouchDB('records');
 window.db = db;
+
+window.loadSampleData = () => {
+    db.destroy().then(() => {
+        db = new PouchDB('records');
+        return db.bulkDocs(sampleData);
+    });
+};
 
 const state = {
     init () {

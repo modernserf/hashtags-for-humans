@@ -1,0 +1,18 @@
+[
+    {
+        "summary" : "This is a test 1",
+        "tags" : ["foo"]
+    },
+    {
+        "summary" : "This is another test",
+        "tags" : ["foo", "bar"]
+    },
+    {
+        "summary" : "This only belongs to #bar",
+        "tags" : ["bar"]
+    },
+    {
+        "summary" : "In #foo, #bar and #baz",
+        "tags" : ["foo", "bar", "baz"]
+    }
+]
