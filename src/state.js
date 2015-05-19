@@ -2,7 +2,7 @@ import PouchDB from 'pouchdb';
 import sampleData from 'sample-data.json';
 
 window.PouchDB = PouchDB;
-PouchDB.debug.enable('*');
+// PouchDB.debug.disable();
 
 let db = new PouchDB('records');
 window.db = db;

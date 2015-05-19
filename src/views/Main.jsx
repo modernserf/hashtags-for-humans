@@ -1,11 +1,14 @@
+"use strict";
+
 import React from 'react';
+import TagsWithCompletion from 'views/TagsWithCompletion';
 
 class NewRecord extends React.Component {
     constructor () {
         super();
         this.state = {
             summary: "",
-            tags: ""
+            tags: []
         };
     }
     addRecord (e) {
@@ -14,15 +17,16 @@ class NewRecord extends React.Component {
         const { data } = this.props;
         data.addRecord({
             summary: summary,
-            tags: tags.split(" ")
+            tags: tags
         }).then(() => {
             this.setState({
                 summary: "",
-                tags: ""
+                tags: []
             });
         });
     }
     render () {
+        const { data, onCancel } = this.props;
         const { summary, tags } = this.state;
 
         return (
@@ -33,10 +37,14 @@ class NewRecord extends React.Component {
                     onChange={(e) => this.setState({
                         summary: e.target.value})}/>
                 <label>Tags</label>
-                <input value={tags}
-                    onChange={(e) => this.setState({
-                        tags: e.target.value})}/>
-                <button type="submit">Add</button>
+                <TagsWithCompletion value={tags}
+                    options={[...data.tags.keys()]}
+                    onChange={(t) => this.setState({tags: t})}/>
+                <div className="flex-row">
+                    <button type="submit">Add</button>
+                    <button type="button"
+                        onClick={onCancel}>Cancel</button>
+                </div>
             </form>
         );
     }
@@ -82,7 +90,7 @@ class RecordList extends React.Component {
         super();
         this.state = {
             filterText: "",
-            showNewRecord: false
+            showNewRecord: true
         };
     }
     render () {
@@ -101,13 +109,8 @@ class RecordList extends React.Component {
             </li>);
 
         const newRecord = showNewRecord ? (
-            <div>
-                <NewRecord data={data}/>
-                <button type="button"
-                    onClick={() => this.setState({showNewRecord: false})}>
-                    Cancel
-                </button>
-            </div>
+            <NewRecord data={data}
+                onCancel={() => this.setState({showNewRecord: false})}/>
         ) : (
             <button type="button"
                 onClick={() => this.setState({showNewRecord: true})}>
