@@ -3,8 +3,7 @@
 Tag-oriented project management
 
 # installation
-uses jspm
-`npm install jspm/jspm-cli jspm-server -g`
+`npm install`
 
 # running
 `npm start`

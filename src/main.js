@@ -1,6 +1,9 @@
+import 'babel/polyfill';
+import 'whatwg-fetch';
+
 import React from 'react';
-import initState from 'lib/state';
-import Main from 'lib/views/Main.jsx!';
+import initState from 'state';
+import Main from 'views/Main';
 
 const domLoaded = new Promise((resolve) => {
     if (document.readyState === "complete") {

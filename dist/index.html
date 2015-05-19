@@ -6,17 +6,18 @@
     <title>Tagsale</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <script src="jspm_packages/system.js"></script>
-    <script src="config.js"></script>
-    <script>
-      System.import('lib/main');
-    </script>
+    <script src="main.js"></script>
     <style>
         label, input, textarea {
             display: block;
             width: 100%;
         }
     </style>
+    <script>
+        if (window.location.hostname === "localhost"){
+            document.write('<script src="/webpack-dev-server.js"><\/script>');
+        }
+    </script>
 </head>
 <body>
 

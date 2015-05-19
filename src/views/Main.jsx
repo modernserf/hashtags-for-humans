@@ -19,7 +19,7 @@ class Main extends React.Component {
                 summary: "",
                 tags: ""
             });
-        })
+        });
     }
     render () {
         const { state } = this.props;
@@ -29,11 +29,11 @@ class Main extends React.Component {
             <li key={r._id}>{r.summary}</li>);
 
         const tagItems = [...state.tags].map((t) => {
-            const [name, items] = t;
+            const [name] = t;
             return (
                 <li key={name}>{name}</li>
-            )
-        })
+            );
+        });
 
         return (
             <div style={{
