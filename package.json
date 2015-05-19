@@ -3,6 +3,11 @@
   "authors": [
     "Justin Falcone <justin@justinfalcone.com>"
   ],
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:modernserf/tagsale.git"
+  },
+  "license": "MIT",
   "dependencies": {
     "autoprefixer-loader": "^1.0.0",
     "babel": "^5.2.13",
@@ -27,12 +32,16 @@
     "webpack-dev-server": "^1.7.0",
     "whatwg-fetch": "^0.6.0"
   },
-  "repository": {
-    "type": "git",
-    "url": "git@github.com:modernserf/tagsale.git"
+  "devDependencies": {
+    "gh-pages-deploy": "^0.3.0",
   },
-  "license": "MIT",
   "scripts": {
-    "start": "node node_modules/webpack-dev-server/bin/webpack-dev-server.js"
+    "start": "node node_modules/webpack-dev-server/bin/webpack-dev-server.js",
+    "webpack-prod": "node node_modules/webpack/bin/webpack.js -p",
+    "deploy" : "node node_modules/gh-pages-deploy/bin/gh-pages-deploy"
+  },
+  "gh-pages-deploy" : {
+    "staticpath": "dist",
+    "prep": ["webpack-prod"]
   }
 }
