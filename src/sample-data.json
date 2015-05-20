@@ -14,5 +14,10 @@
     {
         "summary" : "In #foo, #bar and #baz",
         "tags" : ["foo", "bar", "baz"]
+    },
+    {
+        "summary" : "Workspace: default",
+        "selectedTags" : ["foo","baz"],
+        "tags" : ["workspace"]
     }
 ]

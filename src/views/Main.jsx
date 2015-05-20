@@ -2,6 +2,9 @@
 
 import React from 'react';
 import TagsWithCompletion from 'views/TagsWithCompletion';
+import Workspace from 'views/Workspace';
+import RecordCard from 'views/RecordCard';
+import TagList from 'views/TagList';
 
 class NewRecord extends React.Component {
     constructor () {
@@ -50,40 +53,7 @@ class NewRecord extends React.Component {
     }
 }
 
-class RecordCard extends React.Component {
-    render () {
-        const { data } = this.props;
 
-        const recordStyle = {
-            padding: 8,
-            border: "1px solid #ccc",
-            margin: 4
-        };
-
-        const tagGroupStyle = {
-            textAlign: "right",
-            paddingTop: 4,
-            color: "#999",
-            fontSize: 14
-        };
-
-        const tagStyle = {
-            display: "inline-block",
-            paddingLeft: 4
-        };
-
-        return (
-            <div style={recordStyle}>
-                <div>{data.summary}</div>
-                <ul style={tagGroupStyle}>
-                    {data.tags.map((t) =>
-                        <li style={tagStyle}
-                            key={t}>{"#" + t}</li>)}
-                </ul>
-            </div>
-        );
-    }
-}
 
 class RecordList extends React.Component {
     constructor () {
@@ -100,8 +70,8 @@ class RecordList extends React.Component {
 
         // TODO: filter set directly
         const records = filterText ?
-            [...data.records].filter(() => true) :
-            [...data.records];
+            [...data.records.values()].filter(() => true) :
+            [...data.records.values()];
 
         const recordTags = records.map((r) =>
             <li key={r._id}>
@@ -127,53 +97,6 @@ class RecordList extends React.Component {
                     })}/>
                 {newRecord}
                 <ul>{recordTags}</ul>
-            </div>
-        );
-    }
-}
-
-class TagList extends React.Component {
-    render () {
-        const { data } = this.props;
-
-        const tags = [...data.tags].map((t) => {
-            const [name] = t;
-            return (
-                <li key={name}>{name}</li>
-            );
-        });
-
-        return (
-            <div>
-                <ul>{tags}</ul>
-            </div>
-        );
-    }
-}
-
-class Workspace extends React.Component {
-    render () {
-        const { data } = this.props;
-
-        const cols = [...data.tags].map((t) => {
-            const [name, records] = t;
-
-            const recordTags = [...records].map((r) =>
-                <li key={r._id}>
-                    <RecordCard data={r}/>
-                </li>);
-
-            return (
-                <div>
-                    <h3>{name}</h3>
-                    <ul>{recordTags}</ul>
-                </div>
-            );
-        });
-
-        return (
-            <div className="flex-row">
-                {cols}
             </div>
         );
     }
