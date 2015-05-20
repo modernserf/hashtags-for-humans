@@ -23,7 +23,7 @@ class TagList extends React.Component {
         }
 
         workspace.selectedTags = tags::into(Array);
-        data._didChange();
+        data.updateRecord(workspace);
     }
     render () {
         const { data } = this.props;

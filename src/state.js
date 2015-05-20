@@ -18,11 +18,14 @@ const state = {
     init () {
         // todo async/await?
         return db.allDocs({include_docs: true}).then((res) => {
-            this.records = new Set(res.rows.map((row) => row.doc));
+            this.records = res.rows.reduce((coll, row) => {
+                coll.set(row.id, row.doc);
+                return coll;
+            }, new Map());
             // map of set of record
             this.tags = new Map();
 
-            for (const r of this.records) {
+            for (const r of this.records.values()) {
                 this._buildTagsFor(r);
             }
             return this;
@@ -33,17 +36,32 @@ const state = {
             return Promise.reject("Required: tags");
         }
 
-        return db.post(data).then((res) => {
-            data._id = res.id;
-            data._rev = res.rev;
-            this.records.add(data);
-            this._buildTagsFor(data);
-            this._didChange();
-        });
+        return db.post(data).then((res) => this._didUpdate(data, res));
     },
+    updateRecord (data) {
+        if (!data.tags) {
+            return Promise.reject("Required: tags");
+        }
+        if (!data._id) {
+            return Promise.reject("Required: _id");
+        }
+        if (!data._rev) {
+            return Promise.reject("Required: _rev");
+        }
+
+        return db.put(data).then((res) => this._didUpdate(data, res));
+    },
+
     onChange (fn) {
         this._changeListeners.push(fn);
         return this;
+    },
+    _didUpdate (data, res) {
+        data._id = res.id;
+        data._rev = res.rev;
+        this.records.set(data._id, data);
+        this._buildTagsFor(data);
+        this._didChange();
     },
     _didChange () {
         for (const l of this._changeListeners) {

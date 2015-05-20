@@ -70,8 +70,8 @@ class RecordList extends React.Component {
 
         // TODO: filter set directly
         const records = filterText ?
-            [...data.records].filter(() => true) :
-            [...data.records];
+            [...data.records.values()].filter(() => true) :
+            [...data.records.values()];
 
         const recordTags = records.map((r) =>
             <li key={r._id}>
