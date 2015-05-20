@@ -4,7 +4,12 @@ import { first, either, map, into } from 'seq';
 
 // TODO: not just "first" workspace
 function getCurrentWorkspace () {
-    return this.tags.get('workspace')::first();
+    return this.tags.get('workspace')::first() || {
+        _id : "WORKSPACE_DEFAULT",
+        "summary" : "Workspace: default",
+        "selectedTags" : [],
+        "tags" : ["workspace"]
+    }
 };
 
 function getSelectedTags () {

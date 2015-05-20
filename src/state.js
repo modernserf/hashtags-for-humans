@@ -45,9 +45,6 @@ const state = {
         if (!data._id) {
             return Promise.reject("Required: _id");
         }
-        if (!data._rev) {
-            return Promise.reject("Required: _rev");
-        }
 
         return db.put(data).then((res) => this._didUpdate(data, res));
     },

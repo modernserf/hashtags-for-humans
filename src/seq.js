@@ -53,6 +53,7 @@ export function get (key) {
 
 // as if this were get(0)
 export function first () {
+    if (!this){ return undefined; }
     const iter = this[Symbol.iterator]();
     return iter.next().value;
 }
