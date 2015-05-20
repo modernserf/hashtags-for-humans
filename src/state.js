@@ -7,10 +7,16 @@ window.PouchDB = PouchDB;
 let db = new PouchDB('records');
 window.db = db;
 
-window.loadSampleData = () => {
-    db.destroy().then(() => {
+const resetDB = (data) => {
+    return db.destroy().then(() => {
         db = new PouchDB('records');
-        return db.bulkDocs(sampleData);
+        return db.bulkDocs(data);
+    });
+};
+
+window.loadSampleData = () => {
+    resetDB(sampleData).then(() => {
+        window.location.reload();
     });
 };
 
@@ -30,6 +36,17 @@ const state = {
             }
             return this;
         });
+    },
+    resetDB (data) {
+        if (!Array.isArray(data)){
+            return Promise.reject("Data must be an Array of records");
+        }
+
+        return resetDB(data);
+    },
+    dumpDB () {
+        return db.allDocs({include_docs: true})
+            .then((res) => res.rows.map((row) => row.doc));
     },
     addRecord (data) {
         if (!data.tags) {
