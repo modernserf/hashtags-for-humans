@@ -6,6 +6,8 @@ import Workspace from 'views/Workspace';
 import RecordCard from 'views/RecordCard';
 import TagList from 'views/TagList';
 
+import { get } from 'seq';
+
 class NewRecord extends React.Component {
     constructor () {
         super();
@@ -102,6 +104,86 @@ class RecordList extends React.Component {
     }
 }
 
+class ManageFiles extends React.Component {
+    constructor () {
+        super();
+
+        this.state = {
+            fileContents: null
+        };
+    }
+    loadFile (e) {
+        const file = e::get('target')::get('files')::get(0);
+        if (!file){ return; }
+
+        const reader = new FileReader();
+
+        reader.onload = (e) => {
+            const res = e.target.result;
+            try {
+                console.log(e, res);
+                let fileContents = JSON.parse(res);
+
+                this.setState({
+                    fileContents: fileContents
+                });
+            } catch (err) {
+                console.error(err);
+                return;
+            }
+        };
+
+        reader.readAsText(file);
+    }
+    saveFile () {
+        const { data } = this.props;
+        data.dumpDB().then((res) => {
+            const text = JSON.stringify(res);
+            const filename = "tagasale.json";
+
+            var pom = document.createElement('a');
+            pom.setAttribute('href',
+                'data:application/json;charset=utf-8,' +
+                encodeURIComponent(text));
+            pom.setAttribute('download', filename);
+
+            pom.style.display = 'none';
+            document.body.appendChild(pom);
+
+            pom.click();
+
+            document.body.removeChild(pom);
+        });
+    }
+    onSubmit () {
+        const { data } = this.props;
+        const { fileContents } = this.state;
+        data.resetDB(fileContents).then(() => {
+            window.location.reload();
+        });
+    }
+    render () {
+        // const { data } = this.props;
+        const { fileContents } = this.state;
+
+        const confirmUpload = fileContents ? (
+            <button type="button"
+                onClick={() => this.onSubmit()}
+                >Confirm</button>
+        ) : null;
+
+        return (
+            <div className="flex-row">
+                <button type="button"
+                    onClick={::this.saveFile}>Save File</button>
+                {confirmUpload}
+                <input type="file" onChange={::this.loadFile}/>
+            </div>
+
+        );
+    }
+}
+
 class Main extends React.Component {
     render () {
         const { data } = this.props;
@@ -118,7 +200,11 @@ class Main extends React.Component {
 
         return (
             <div>
-                <h1>tagsale</h1>
+                <header className="flex-row">
+                    <h1>tagsale</h1>
+                    <ManageFiles data={data}/>
+                </header>
+
                 <div className="flex-row">
                     <section style={flexItem}>
                         <h2>Records</h2>
