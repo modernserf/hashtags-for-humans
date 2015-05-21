@@ -9,8 +9,8 @@ function getCurrentWorkspace () {
         "summary" : "Workspace: default",
         "selectedTags" : [],
         "tags" : ["workspace"]
-    }
-};
+    };
+}
 
 function getSelectedTags () {
     return this::either('selectedTags',[])::into(Set);
@@ -39,7 +39,7 @@ class TagList extends React.Component {
         const tags = data.tags.keys()::map((name) => {
             const style = workspace.has(name) ? {
                 backgroundColor: "green",
-            } : {}
+            } : {};
 
             return (
                 <li style={style} key={name}>
