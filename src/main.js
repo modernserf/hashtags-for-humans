@@ -4,7 +4,6 @@ import 'css/reset.css';
 import 'css/style.css';
 
 import React from 'react';
-import state from 'state';
 import Main from 'views/Main';
 
 const domLoaded = new Promise((resolve) => {
@@ -22,8 +21,6 @@ const render = (data) => {
     );
 };
 
-Promise.all([state.init(), domLoaded]).then((res) => {
-    const [data] = res;
-    render(data);
-    data.onChange(render);
+Promise.all([domLoaded]).then(() => {
+    render();
 });

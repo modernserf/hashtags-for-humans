@@ -22,7 +22,7 @@ label, input, textarea {
     width: 100%;
 }
 
-.flex-row {
+:global .flex-row {
     display: flex;
     flex-direction: row;
 }
@@ -41,18 +41,4 @@ h3 {
     font-size: 16px;
     padding-bottom: 8px;
     font-weight: bold;
-}
-
-.module-tags-with-completion input {
-    width: auto;
-    border: none;
-    padding-left: 8px;
-}
-
-.module-tags-with-completion input:focus {
-    outline: none;
-}
-
-.module-tags-with-completion .react-tagsinput-tag {
-    display: none;
 }
