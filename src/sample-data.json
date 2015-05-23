@@ -1,23 +1,218 @@
 [
-    {
-        "summary" : "This is a test 1",
-        "tags" : ["foo"]
-    },
-    {
-        "summary" : "This is another test",
-        "tags" : ["foo", "bar"]
-    },
-    {
-        "summary" : "This only belongs to #bar",
-        "tags" : ["bar"]
-    },
-    {
-        "summary" : "In #foo, #bar and #baz",
-        "tags" : ["foo", "bar", "baz"]
-    },
-    {
-        "summary" : "Workspace: default",
-        "selectedTags" : ["foo","baz"],
-        "tags" : ["workspace"]
-    }
+  {
+    "name": "Lucy",
+    "picture": "http://placehold.it/32x32",
+    "tags": [
+      "green-eyes",
+      "female",
+      "blond"
+    ]
+  },
+  {
+    "name": "Jennie",
+    "picture": "http://placehold.it/32x32",
+    "tags": [
+      "brown-eyes",
+      "female",
+      "brunette"
+    ]
+  },
+  {
+    "name": "Bobbi",
+    "picture": "http://placehold.it/32x32",
+    "tags": [
+      "brown-eyes",
+      "female",
+      "brunette"
+    ]
+  },
+  {
+    "name": "Helene",
+    "picture": "http://placehold.it/32x32",
+    "tags": [
+      "green-eyes",
+      "female",
+      "redhead"
+    ]
+  },
+  {
+    "name": "Jewell",
+    "picture": "http://placehold.it/32x32",
+    "tags": [
+      "green-eyes",
+      "female",
+      "blond"
+    ]
+  },
+  {
+    "name": "Ola",
+    "picture": "http://placehold.it/32x32",
+    "tags": [
+      "blue-eyes",
+      "female",
+      "brunette"
+    ]
+  },
+  {
+    "name": "Constance",
+    "picture": "http://placehold.it/32x32",
+    "tags": [
+      "green-eyes",
+      "female",
+      "brunette"
+    ]
+  },
+  {
+    "name": "Helena",
+    "picture": "http://placehold.it/32x32",
+    "tags": [
+      "brown-eyes",
+      "female",
+      "blond"
+    ]
+  },
+  {
+    "name": "Essie",
+    "picture": "http://placehold.it/32x32",
+    "tags": [
+      "green-eyes",
+      "female",
+      "brunette"
+    ]
+  },
+  {
+    "name": "Knapp",
+    "picture": "http://placehold.it/32x32",
+    "tags": [
+      "brown-eyes",
+      "male",
+      "brunette"
+    ]
+  },
+  {
+    "name": "Christie",
+    "picture": "http://placehold.it/32x32",
+    "tags": [
+      "blue-eyes",
+      "female",
+      "blond"
+    ]
+  },
+  {
+    "name": "Amie",
+    "picture": "http://placehold.it/32x32",
+    "tags": [
+      "green-eyes",
+      "female",
+      "redhead"
+    ]
+  },
+  {
+    "name": "Davis",
+    "picture": "http://placehold.it/32x32",
+    "tags": [
+      "blue-eyes",
+      "male",
+      "brunette"
+    ]
+  },
+  {
+    "name": "Petra",
+    "picture": "http://placehold.it/32x32",
+    "tags": [
+      "green-eyes",
+      "female",
+      "brunette"
+    ]
+  },
+  {
+    "name": "Reed",
+    "picture": "http://placehold.it/32x32",
+    "tags": [
+      "brown-eyes",
+      "male",
+      "brunette"
+    ]
+  },
+  {
+    "name": "Lucinda",
+    "picture": "http://placehold.it/32x32",
+    "tags": [
+      "green-eyes",
+      "female",
+      "redhead"
+    ]
+  },
+  {
+    "name": "Meghan",
+    "picture": "http://placehold.it/32x32",
+    "tags": [
+      "green-eyes",
+      "female",
+      "brunette"
+    ]
+  },
+  {
+    "name": "Sexton",
+    "picture": "http://placehold.it/32x32",
+    "tags": [
+      "blue-eyes",
+      "male",
+      "brunette"
+    ]
+  },
+  {
+    "name": "Joyce",
+    "picture": "http://placehold.it/32x32",
+    "tags": [
+      "blue-eyes",
+      "female",
+      "blond"
+    ]
+  },
+  {
+    "name": "Vilma",
+    "picture": "http://placehold.it/32x32",
+    "tags": [
+      "brown-eyes",
+      "female",
+      "blond"
+    ]
+  },
+  {
+    "name": "Estela",
+    "picture": "http://placehold.it/32x32",
+    "tags": [
+      "blue-eyes",
+      "female",
+      "redhead"
+    ]
+  },
+  {
+    "name": "Lester",
+    "picture": "http://placehold.it/32x32",
+    "tags": [
+      "blue-eyes",
+      "male",
+      "brunette"
+    ]
+  },
+  {
+    "name": "Boyle",
+    "picture": "http://placehold.it/32x32",
+    "tags": [
+      "blue-eyes",
+      "male",
+      "blond"
+    ]
+  },
+  {
+    "name": "Kate",
+    "picture": "http://placehold.it/32x32",
+    "tags": [
+      "green-eyes",
+      "female",
+      "redhead"
+    ]
+  }
 ]

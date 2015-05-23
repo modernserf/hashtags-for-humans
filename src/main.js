@@ -3,6 +3,8 @@ import 'whatwg-fetch';
 import 'css/reset.css';
 import 'css/style.css';
 
+import rawData from 'sample-data.json';
+
 import React from 'react';
 import Main from 'views/Main';
 
@@ -14,7 +16,7 @@ class GameBoard {
     }
     static create (people) {
         return new GameBoard({
-            people: people.map((p) => new Person(p)),
+            people: people.map((p) => Person.create(p)),
             width: 6,
             height: 4
         });
@@ -29,7 +31,7 @@ class GameBoard {
                 coll[coll.length - 1].push(p);
             }
             return coll;
-        });
+        },[]);
     }
     query (q) {
         return this.people.filter((p) => p.query(q));
@@ -85,7 +87,17 @@ const quereval = (env, list) => {
     }));
 };
 
-window.Query = quereval;
+const data = GameBoard.create(rawData);
+
+const tags = ['male','female',
+    'blue-eyes','brown-eyes','green-eyes',
+    'blond','redhead','brunette'];
+
+window.Query = (q) => {
+    return data.query(q).map((x) => x.name);
+};
+
+console.log(tags, data);
 
 
 const domLoaded = new Promise((resolve) => {
@@ -96,13 +108,12 @@ const domLoaded = new Promise((resolve) => {
     }
 });
 
-const render = (data) => {
+Promise.all([domLoaded]).then(() => {
     React.render(
-        React.createFactory(Main)({data: data}),
+        React.createFactory(Main)({
+            data: data,
+            tags: tags
+        }),
         document.getElementById('app')
     );
-};
-
-Promise.all([domLoaded]).then(() => {
-    render();
 });
