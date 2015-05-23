@@ -98,6 +98,8 @@ class Main extends React.Component {
                 <GameBoard data={data} query={query}/>
                 <h2>tags</h2>
                 <TagList data={tags}/>
+                <h2>operators</h2>
+                <TagList data={["and","or","not"]}/>
                 <h2>query</h2>
                 <p>example: ["and","male",["or","brunette","blue-eyes"]]</p>
                 <QueryBuilder onChange={(x) => this.setState({query: x})}/>
