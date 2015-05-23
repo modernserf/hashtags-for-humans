@@ -72,6 +72,10 @@ function not (...items) {
 }
 
 const quereval = (env, list) => {
+    if (!list || !list.length) {
+        return false;
+    }
+
     // lol i guess this is a lisp-2
     const fns = {
         and, or, not
@@ -92,13 +96,6 @@ const data = GameBoard.create(rawData);
 const tags = ['male','female',
     'blue-eyes','brown-eyes','green-eyes',
     'blond','redhead','brunette'];
-
-window.Query = (q) => {
-    return data.query(q).map((x) => x.name);
-};
-
-console.log(tags, data);
-
 
 const domLoaded = new Promise((resolve) => {
     if (document.readyState === "complete") {
