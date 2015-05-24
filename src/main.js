@@ -60,14 +60,17 @@ class Person {
 const id = (x) => x;
 
 function and (...items) {
+    if (!items.length) { return false; }
     return items.every(id);
 }
 
 function or (...items) {
+    if (!items.length) { return true; }
     return items.some(id);
 }
 
 function not (...items) {
+    if (!items.length) { return true; }
     return !items.some(id);
 }
 

@@ -1,48 +1,51 @@
 "use strict";
 
 import React from 'react';
+import HTML5Backend from 'react-dnd/modules/backends/HTML5';
+import { DragSource, DropTarget, DragDropContext } from 'react-dnd';
 
-class Query {
-    constructor () {
-        this.data = null;
-        this.cursorPath = [];
-    }
-    toString () {
-        return JSON.stringify(this.data);
-    }
-    insertTag (tag) {
-        let cursor = this.data;
-        for (let p of this.cursorPath) {
-            cursor = cursor[p];
-        }
-        cursor.push(tag);
-        return this;
-    }
-    insertOperator (op) {
-        const opList = [op];
-        if (!this.data){
-            this.data = opList;
-            return this;
-        }
 
-        let cursor = this.data;
-        for (let p of this.cursorPath) {
-            cursor = cursor[p];
+@DragSource("tag", {
+    beginDrag (props) {
+        return {value: props.value };
+    },
+    endDrag (props, monitor) {
+        if (monitor.didDrop()) {
+            // do something
+        } else if (props.onRemove) {
+            props.onRemove();
         }
-        cursor.push(opList);
-        this.cursorPath.push(cursor.length - 1);
-        return this;
+    }
+},(connect,monitor) => ({
+    connectDragSource: connect.dragSource(),
+    isDragging: monitor.isDragging()
+}))
+class TagCell {
+    render () {
+        const { value, isDragging, connectDragSource } = this.props;
+
+        const cursor = isDragging ?
+            "-webkit-grabbing" :
+            "-webkit-grab";
+
+        return connectDragSource(<div style={{
+            cursor: cursor,
+            WebkitUserSelect: "none",
+            borderRadius: 4,
+            padding: 4,
+            border: "1px solid gray",
+            display: "inline-block"
+        }}>{value}</div>);
     }
 }
 
-class TagList extends React.Component {
+class TagList {
     render () {
-        const { data, onSelect } = this.props;
+        const { data } = this.props;
 
         const tags = data.map((t) =>
             <li key={t}>
-                <button onClick={() => onSelect(t)}>
-                    {t}</button>
+                <TagCell value={t}/>
             </li>);
 
         return <ul>{tags}</ul>;
@@ -50,25 +53,59 @@ class TagList extends React.Component {
 }
 
 // expects string (e.g. tag)
-class QueryNode extends React.Component {
+class QueryNode {
     render () {
         const { data, onRemove } = this.props;
 
         return (
             <div className="flex-row">
-                <div>{data}</div>
-                <button onClick={onRemove}>&times;</button>
+                <TagCell value={data} onRemove={onRemove}/>
             </div>
         );
     }
 }
 
-// expects []
-class QueryExpression extends React.Component {
+@DropTarget('tag',{
+    drop (props, monitor) {
+        props.onInsert(monitor.getItem().value);
+    }
+},(connect) => ({
+    connectDropTarget: connect.dropTarget(),
+}))
+class QueryDropZone {
     render () {
-        const { data, onRemove } = this.props;
+        const { connectDropTarget } = this.props;
 
-        if (!data){ return null; }
+        return connectDropTarget(
+            <div>...</div>
+        );
+    }
+}
+
+// expects []
+@DragSource("tag", {
+    beginDrag (props) {
+        return {value: props.data };
+    },
+    endDrag (props, monitor) {
+        if (!monitor.didDrop() && props.onRemove) {
+            props.onRemove();
+        }
+    }
+},(connect,monitor) => ({
+    connectDragSource: connect.dragSource(),
+    isDragging: monitor.isDragging()
+}))
+class QueryExpression {
+    render () {
+        const { data, onChange, onRemove, connectDragSource } = this.props;
+
+        if (!data){
+            return  (
+                <QueryDropZone
+                    onInsert={(x) => onChange(x)}/>
+            );
+        }
 
         if (typeof data === "string") {
             return <QueryNode data={data} onRemove={onRemove}/>;
@@ -76,51 +113,44 @@ class QueryExpression extends React.Component {
 
         const [head, ...tail] = data;
 
-        return (
+        const children = tail.map((t,i) =>
+            <QueryExpression data={t} key={i}
+                onChange={(x) => {
+                    data[i +1] = x;
+                    onChange(data);
+                }}
+                onRemove={() => {
+                    data.splice(i + 1,1);
+                    onChange(data);
+                }}/>
+        );
+
+        return connectDragSource(
             <div className="flex-row">
                 <div>{"(" + head}</div>
-                <button onClick={onRemove}>&times;</button>
                 <div>&nbsp;</div>
                 <div>
-                    {tail.map((t,i) => <QueryExpression data={t} key={i}/>)}
-                    <span>)</span>
+                    {children}
+                    <div className="flex-row">
+                        <QueryDropZone
+                            onInsert={(x) => onChange(data.concat([x]))}/>
+                        <span>)</span>
+                    </div>
                 </div>
             </div>
         );
     }
 }
 
-
-
-class QueryBuilder extends React.Component {
-    constructor () {
-        super();
-
-        this.state = {
-            tempValue: ""
-        };
-    }
-    // onChange (e) {
-    //     const text = e.target.value;
-    //     const { onChange } = this.props;
-    //     let parsed = [];
-
-    //     try {
-    //         parsed = JSON.parse(e.target.value);
-    //         onChange(parsed);
-    //     } finally {
-    //         this.setState({
-    //             tempValue: text
-    //         });
-    //     }
-    // }
+class QueryBuilder {
     render () {
-        const { data } = this.props;
-        // const { tempValue } = this.state;
+        const { data, onChange } = this.props;
 
         return (
             <div>
-                <QueryExpression data={data.data}/>
+                <QueryExpression data={data}
+                    onRemove={() => onChange(null)}
+                    onChange={onChange}/>
             </div>
         );
     }
@@ -162,34 +192,36 @@ class GameBoard extends React.Component {
     }
 }
 
+@DragDropContext(HTML5Backend)
 class Main extends React.Component {
     constructor () {
         super();
 
         this.state = {
-            query: new Query()
+            query: null
         };
     }
     render () {
         const { data, tags } = this.props;
         const { query } = this.state;
 
-        console.log(query.data);
+        console.log(query);
+
+        const operators = [["and"],["or"],["not"]];
 
         return (
             <div>
                 <h1>Reverse Guess Who?</h1>
-                <GameBoard data={data} query={query.data}/>
+                <GameBoard data={data} query={query}/>
                 <h2>tags</h2>
-                <TagList data={tags} onSelect={(t) => this.setState({
-                    query: query.insertTag(t)
-                })}/>
+                <TagList data={tags} onSelect={() => {}}/>
                 <h2>operators</h2>
-                <TagList data={["and","or","not"]} onSelect={(o) => this.setState({
-                    query: query.insertOperator(o)
-                })}/>
+                <TagList data={operators} onSelect={() => {}}/>
                 <h2>query</h2>
-                <QueryBuilder data={query}/>
+                <QueryBuilder data={query}
+                    onChange={(next) => this.setState({
+                        query: next
+                    })}/>
             </div>
         );
     }
