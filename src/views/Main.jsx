@@ -49,6 +49,49 @@ class TagList extends React.Component {
     }
 }
 
+// expects string (e.g. tag)
+class QueryNode extends React.Component {
+    render () {
+        const { data, onRemove } = this.props;
+
+        return (
+            <div className="flex-row">
+                <div>{data}</div>
+                <button onClick={onRemove}>&times;</button>
+            </div>
+        );
+    }
+}
+
+// expects []
+class QueryExpression extends React.Component {
+    render () {
+        const { data, onRemove } = this.props;
+
+        if (!data){ return null; }
+
+        if (typeof data === "string") {
+            return <QueryNode data={data} onRemove={onRemove}/>;
+        }
+
+        const [head, ...tail] = data;
+
+        return (
+            <div className="flex-row">
+                <div>{"(" + head}</div>
+                <button onClick={onRemove}>&times;</button>
+                <div>&nbsp;</div>
+                <div>
+                    {tail.map((t,i) => <QueryExpression data={t} key={i}/>)}
+                    <span>)</span>
+                </div>
+            </div>
+        );
+    }
+}
+
+
+
 class QueryBuilder extends React.Component {
     constructor () {
         super();
@@ -76,9 +119,9 @@ class QueryBuilder extends React.Component {
         // const { tempValue } = this.state;
 
         return (
-            <pre>
-                {data.toString()}
-            </pre>
+            <div>
+                <QueryExpression data={data.data}/>
+            </div>
         );
     }
 }
