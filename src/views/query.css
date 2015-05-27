@@ -1,0 +1,11 @@
+.queryDrop {
+    padding: 0 10px;
+    font-weight: bold;
+    color: #999;
+}
+
+.container {
+    background-color: #eee;
+    padding: 10px;
+    border-radius: 10px;
+}

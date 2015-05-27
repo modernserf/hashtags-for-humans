@@ -74,8 +74,8 @@ function not (...items) {
     return !items.some(id);
 }
 
-const quereval = (env, list) => {
-    if (!list || !list.length) {
+const quereval = (env, x) => {
+    if (!x || x.length === 0) {
         return false;
     }
 
@@ -84,14 +84,12 @@ const quereval = (env, list) => {
         and, or, not
     };
 
-    const [head, ...tail] = list;
-    return fns[head].apply(null, tail.map((t) => {
-        if (Array.isArray(t)) {
-            return quereval(env, t);
-        } else if (typeof t === "string") {
-            return env.tags.has(t);
-        }
-    }));
+    if (Array.isArray(x)) {
+        const [head, ...tail] = x;
+        return fns[head].apply(null, tail.map((t) => quereval(env, t)));
+    } else {
+        return env.tags.has(x);
+    }
 };
 
 const data = GameBoard.create(rawData);

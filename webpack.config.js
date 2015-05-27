@@ -37,7 +37,7 @@ module.exports = {
     },
     module: {
         loaders: [
-            {test: /\.css$/, loaders: ["style","css","postcss"]},
+            {test: /\.css$/, loaders: ["style","css?localIdentName=[name]__[local]___[hash:base64:5]","postcss"]},
             {test: /\.js$/, exclude: /node_modules/, loader: babelConfig},
             {test: /\.jsx$/, loaders: ["react-hot", babelConfig] },
             {test: /\.json$/, loader: "json-loader"},
