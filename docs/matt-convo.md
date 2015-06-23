@@ -1,0 +1,1 @@
+I think you should hit these points: 1) categories vs. tags as ways of thinking about things 2) how each falls short 3) how software outwardly (hashtags) reflects this tug of war and 4) how software inwardly (CSS selectors) reflects this tug of war
