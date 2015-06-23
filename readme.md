@@ -32,7 +32,7 @@ Of course, this created a number of new problems. Without a standard vocabulary,
 
 We'll return to that thought later. The other progenitor of the hashtag is the IRC channel. Now, at first the resemblance seems superficial: IRC uses a hash as a sigil for public channels but otherwise has seemingly little in common with keywords; while cross-references are the core feature of keywords, cross-posting is often a bannable offense on IRC channels. 
 
-However, an interesting pattern emerged in web 2.0 tags. A tag on flickr wasn't just a subset of a static collection, it was an ever-changing view of a stream. It was a living thing that you could interact with. it was a place that you could inhabit. And just as twitter blurs the line between real-time communication and publishing tool, it also blurs the line between channel and tag. 
+However, an interesting pattern emerged in web 2.0 tags. A tag on flickr wasn't just a subset of a static collection, it was an ever-changing view of a stream. It was a living thing that you could interact with. it was a place that you could inhabit. *(explain transition from flickr community speed to twitter conversation speed)* And just as twitter blurs the line between real-time communication and publishing tool, it also blurs the line between channel and tag. 
 
 ## Social Web (Twitter/Tumblr/Instagram)
 - trending topic
