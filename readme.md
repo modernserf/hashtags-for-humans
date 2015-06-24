@@ -36,12 +36,6 @@ We'll return to that thought later. The other progenitor of the hashtag is the I
 
 However, an interesting pattern emerged in web 2.0 tags. A tag on flickr wasn't just a subset of a static collection, it was an ever-changing view of a stream. It was a living thing that you could interact with. it was a place that you could inhabit. *(explain transition from flickr community speed to twitter conversation speed)* And just as twitter blurs the line between real-time communication and publishing tool, it also blurs the line between channel and tag. 
 
-## Social Web (Twitter/Tumblr/Instagram)
-- trending topic
-- tag as idiom, even in conversation (Still drunk from last night! #hotmess)
-- exhaustive tagging (instagram)
-- tag as footnote (tumblr-style sentence tags)
-
 # Demo: Reverse Guess Who?
 - you know who it is and you need to come up with an unambiguous description
 - again, but with multiple people to select
@@ -59,16 +53,30 @@ However, an interesting pattern emerged in web 2.0 tags. A tag on flickr wasn't 
 - inheritance vs composition/duck typing
 
 # Conclusion: Thinking in Tags
+## tags in the vernacular
+- hashtags have gone from an secondary organizational aid to a part of our daily vocabulary 
+- we develop new and unexpected idioms around hashtags
+- tag as parenthetical aside (on blogs)
+- hashtag used as interjection
+    + used as interjection in conversation (willow pape "hashtag: ratchet.")
 
-## Guess Who: Visible & Invisible identity
-- we’ve been playing guess who with these people, but they all have rich inner lives that contribute to their identity
-- game board cells expand to show little bios of people
+## tag-as-channel used as political identity
+- social media is designed to facilitate rapid spread of memes
+- not just image macros but all kinds of urban folklore
+- ideas of social movements travel as memes 
+- "hashtag activism" as derisive term -- corollaries with "awareness ribbon"
+- hashtag as metonym for social movement with twitter presence but actions elsewhere
+- arguing merits of movement's tenets by hashtag name: #AllLivesMatter = "why not Equalism?"
+- hashtag as affiliation with movement -- flying a hashflag
 
-## Category Culture vs Tag Culture
-- our culture thinks a lot about categories but not about tags
-    + "what are you" as a question expecting a single answer 
-    + political parties 
-    + failures of progressive movements -> intersectionality
-- cultures that live online (e.g. tumblr) embrace ambiguity, heterodoxy, multiple identity
-    + mythology of "SJW" as a bloc but there are many different persepectives
-    + even the most mocked aspects of internet culture (headmates, otherkin, paragraph sexuality) are just a product of young people who think in tags trying to exist in a category-oriented culture
+## tags-as-set used as paradigm of identity
+- tags can be used as either channels or sets, but they're rarely used as both
+- tag is label for identity, but identity is multifaceted -- why not multiple tags?
+- the ideologies adopted by political parties are based on hierarchical, either/or thinking, but we have an opportunity to change the paradigm
+
+It is easy to mock young people on tumblr for their jargon-dense descriptions of their identity (e.g. panromantic demisexual) -- to ridicule them as "special snowflakes" that aren't really all that special; just an undifferentiated mass of "social justice warriors." But why? Are we not all, in fact, special snowflakes? Should we expect categories of identity to remain forever fixed; should we expect people who don't *quite* fit in to just round down to less nuanced versions of themselves? Or can we embrace our idiosyncrasies? Can we allow for inconsistency, irregularity, ambiguity but still find common cause in each aspect of our identities?
+
+## putting it all together
+- given tagged identities #a #b #c
+- identity is intersectional -- i, as an individual, am #a && #b && #c 
+- community is union -- my people are #a || #b || #c
