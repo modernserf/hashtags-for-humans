@@ -63,13 +63,26 @@ Also note that the set of tags includes a different kind of metadata -- the #bro
 
 *TODO: rewrite, "how the hashtag got its hash"*
 
-The other progenitor of the hashtag is the IRC channel. At first the resemblance seems superficial: IRC is a decentralized chatroom protocol that predates the web. The rooms are called channels and public channels are marked with a hash symbol; on many servers any user can create a channel. Channels _are_ form of categorization, but the conventions around IRC dictate that your messages belong to a single channel; channels are intended to be a single, long-running discussion with real-time participation. Messages are not intended to be cross-referenced and on many IRC servers cross-posting is a bannable offense. 
+[first use of hashtag on twitter](https://twitter.com/chrismessina/status/223115412)
 
-In contrast are usenet newsgroups, the predecessors of contemporary discussion boards. Usenet's taxonomy is fully hierarchical, with fixed hierarchies in 8 major branches and one free-form (but typically still regulated) branch. Usenet provides th
+How did the hashtag get its hash? 
 
-*TODO: real-time vs offline -- more real-time means more like a channel*
+[# because of IRC convention and it was easy to type on T-9 phones in 2007! (Pre-touch!)](https://twitter.com/chrismessina/status/386127369603256320)
 
-However, an interesting pattern emerged in web 2.0 tags. A tag on flickr wasn't just a subset of a static collection, it was an ever-changing view of a stream. It was a living thing that you could interact with. it was a place that you could inhabit. *(explain transition from flickr community speed to twitter conversation speed)* And just as twitter blurs the line between real-time communication and publishing tool, it also blurs the line between channel and tag. 
+A little background: IRC is a decentralized chatroom protocol that predates the web. The rooms are called channels and public channels are marked with a hash symbol; on many servers any user can create a channel. Channels _are_ a form of categorization, but channels are intended to be a single, long-running discussion with real-time participation. 
+
+IRC channels are vernacular and conversational, but they are not relational; there is no system for cross-referencing. Messages can be cross-posted but this creates unconnected copies. On many IRC servers cross-posting is a bannable offense. 
+
+In 2006, prior to the first twitter hashtags, Jaiku, a now-forgotten microblogging system allowed you to message groups by starting a post with a hashtagged group name, and this would create a new group if one with that name didn't already exist. This was still more channel-oriented than tag-oriented; you were messaging the group as you would message another user; you couldn't "mention" multiple groups. Tagged messages would go into a channel *instead of* the main feed.
+
+But when hashtags came to twitter, there was no builtin support. Much like mentions and retweets, they began as conventions that would only later have built-in support. This meant that early hashtags functioned like keywords for twitter's builtin search system, which allowed people to use them idiomatically as they would tags on flickr. 
+
+(slide: proposed hashtag syntax from messina's blog)
+[Groups for Twitter; or A Proposal for Twitter Tag Channels](http://factoryjoe.com/blog/2007/08/25/groups-for-twitter-or-a-proposal-for-twitter-tag-channels/)
+
+There was a whole syntax for messaging and subscribing to tags proposed, but it was never implemented; twitter never even distinguished between prefixed and inline hashtags as they did between replies and mentions.
+
+Twitter combined the real-time conversational aspects of IRC with the authorial collection aspects of blogging. It needed a system of grouping conversations into a channel and it needed a system for tagging posts with metadata. Hashtags combined these features into a single idiom.
 
 *TODO: examples of tag searches used as channels, note URL pattern*
 
@@ -94,4 +107,9 @@ However, an interesting pattern emerged in web 2.0 tags. A tag on flickr wasn't 
 - hashtag as affiliation with movement -- flying a hashflag
 
 ## relational: tag-as-set and intersectionality
-*TODO: intersectionality for programmers? see matt/robin convo*
+*TODO: intersectionality for programmers?*
+> id like some sort of intersectionality example that's more immediately gemane -- maybe i start with "programmers" as a category, and then break it down first by "safe" properties -- e.g. stack -- and how their experiences can be wildly different and they have different community needs; then break down by gender/race/class etc and the intersectionalities therein. 
+
+> And programmers have intense boundary policing about the most asinine stuff -- tabs vs spaces, vim vs emacs, etc. and "best practices" are more often than not as rooted in tradition and accidents of history as any political ideology?
+But now this feels obvious again
+
