@@ -42,3 +42,8 @@ h3 {
     padding-bottom: 8px;
     font-weight: bold;
 }
+
+:global .game-person {
+    background-image: url('/guesswho2.jpg');
+
+}

@@ -13,21 +13,19 @@ class GameBoard extends React.Component {
 
         const rows = data.rows.map((r,ri) => {
             const cols = r.map((c,ci) => {
-                const tags = [...c.tags].map((t) =>
-                    <li key={t}>{t}</li>
-                );
-
                 const isSelected = query && c.query(query);
 
+                const w = 124;
+
                 const style = {
-                    backgroundColor: isSelected ? "green" : "white",
-                    padding: 20
+                    opacity: isSelected ? 1 : 0.5,
+                    width: w,
+                    height: 210,
+                    backgroundPosition: `${-c.col * w}px ${-c.row * 80}px`
                 };
 
                 return (
-                    <td key={ci} style={style}>
-                        <div>{c.name}</div>
-                        <ul>{tags}</ul>
+                    <td key={ci} className="game-person" style={style}>
                     </td>
                 );
             });

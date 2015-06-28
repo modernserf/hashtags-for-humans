@@ -3,10 +3,30 @@ import 'whatwg-fetch';
 import 'css/reset.css';
 import 'css/style.css';
 
-import rawData from 'sample-data.json';
+import {data as rawData, tags} from 'make-data';
 
 import React from 'react';
 import Main from 'views/Main';
+
+// http://bost.ocks.org/mike/shuffle/
+function shuffle(array) {
+  var m = array.length, t, i;
+
+  // While there remain elements to shuffle…
+  while (m) {
+
+    // Pick a remaining element…
+    i = Math.floor(Math.random() * m--);
+
+    // And swap it with the current element.
+    t = array[m];
+    array[m] = array[i];
+    array[i] = t;
+  }
+
+  return array;
+}
+
 
 class GameBoard {
     constructor (params) {
@@ -40,7 +60,7 @@ class GameBoard {
 
 class Person {
     constructor (params) {
-        for (let p of ['name','picture','tags']) {
+        for (let p of ['name','picture','tags','row','col']) {
             this[p] = params[p];
         }
     }
@@ -48,7 +68,9 @@ class Person {
         return new Person({
             name: params.name,
             picture: params.picture,
-            tags: new Set(params.tags)
+            tags: new Set(params.tags),
+            row: params.row,
+            col: params.col
         });
     }
     // greenspun's 10th law
@@ -93,10 +115,6 @@ const quereval = (env, x) => {
 };
 
 const data = GameBoard.create(rawData);
-
-const tags = ['male','female',
-    'blue-eyes','brown-eyes','green-eyes',
-    'blond','redhead','brunette'];
 
 const domLoaded = new Promise((resolve) => {
     if (document.readyState === "complete") {
