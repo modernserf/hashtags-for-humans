@@ -1,5 +1,4 @@
 # Introduction
-*TODO: rewrite*
 
 (rapidly changing grid of traits)
 
@@ -16,6 +15,8 @@ The information age promises the democratization and decentralization of media, 
 How do we organize knowledge in 2015? The hashtag.
 
 ## Definition 
+
+*TODO: choose better term than temporal and stick with it*
 
 First, let's get our terms straight. There are a lot of systems that resemble hashtags -- well beyond the scope of twitter -- but there are three traits that define the hashtags I am exploring today.
 
@@ -35,7 +36,8 @@ But you can only impose one hierarchy at a time; it must necessarily be compromi
 
 You create a system of categorization on top of your hierarchy, with a vocabulary of keywords to mark attributes of the item that you couldn't express in the hierarchy. For example, the library of congress *classifications* dictate where books are located, and the *subject headings* map topics to the different sections of the classifications hierarchy where that topic is discussed. 
 
-*TODO: not sure this should go here. OO inheritance vs interfaces/traits*
+*TODO: not sure this should go here*
+
 If you've done any programming in typed object-oriented languages like Java you've probably thought a lot about hierarchies in the form of class inheritance. You've also probably come across situations where you just cannot make an inheritance tree make sense on its own and you've used interfaces to connect classes that are similar in function but phylogenetically unrelated.
 
 This indirection is a necessary inconvenience in a physical collection -- an item in that collection needs a canonical address to prevent duplication. But indirection is how everything works on a computer. We're JavaScript programmers, we don't even _get_ to choose our bits are located in memory; duplicate references are the garbage collector's problem. We don't need our data to be stored in a way that's easy for a human to find. Categories were designed to be searched by hand, or on foot; keywords are meant to be searched by computer.
@@ -49,9 +51,9 @@ I'm not gonna tell you that the categories that describe these people don't matt
 
 Each of these people have a different collection of traits -- they have blonde hair and brown eyes and hats and mustaches -- and in the game Guess Who? you're supposed to figure out who your opponent's character is by asking yes-or-no questions about that trait. 
 
-I assure you this was tremendous fun in 1991. I think I might have had a little crush on Maria. I have no idea if this is still interesting to kids because its essentially the same as narrowing down google results.
+I assure you this was tremendous fun in 1991. I think I might have had a little crush on Maria. I have no idea if this is still interesting to kids because its essentially the same as narrowing down Google results.
 
-The questions you ask in guess who are filling in predicates to a big logical `AND`. This is how we could express this in javascript:
+The questions you ask in Guess Who? fill in predicates to a big logical `AND`. This is how we could express this in javascript:
 
 ```
 people.filter((p) => p.blond && p.male && p.mustache)
@@ -81,11 +83,12 @@ Set intersections are the overlapping parts of this venn diagram; intersection c
 
 # web 2.0 (vernacular)
 ## history
-(picture of a tag cloud)
 
 In a typical library, the hierarchy and the keyword vocabulary are fixed, and the collection is curated by the librarians. A patron cannot add books to the collection, nor can they alter the classifications or keyword vocabulary.
 
 (TODO: medical library needs different system than general library)
+
+(picture of a tag cloud)
 
  But the photos on flickr, or the links on delicious belong to the community -- so why shouldn't the vocabulary of categorization also belong the them? And thus the rise of user-generated taxonomy, or "folksonomy", became one of the defining characteristics of the Web 2.0 Era. Not only had we democratized information, we had democratized the organization of information.
 
@@ -119,8 +122,6 @@ This is also the approach taken by browsers. We have a fixed vocabulary of gener
 # channels
 ## history
 
-*TODO: rewrite, "how the hashtag got its hash"*
-
 [first use of hashtag on twitter](https://twitter.com/chrismessina/status/223115412)
 
 How did the hashtag get its hash? 
@@ -135,7 +136,7 @@ In 2006, prior to the first twitter hashtags, Jaiku, a now-forgotten microbloggi
 
 But when hashtags came to twitter, there was no builtin support. Much like mentions and retweets, they began as conventions that would only later have built-in support. This meant that early hashtags functioned like keywords for twitter's builtin search system, which allowed people to use them idiomatically as they would tags on flickr. 
 
-(slide: proposed hashtag syntax from messina's blog)
+(proposed hashtag syntax from messina's blog)
 [Groups for Twitter; or A Proposal for Twitter Tag Channels](http://factoryjoe.com/blog/2007/08/25/groups-for-twitter-or-a-proposal-for-twitter-tag-channels/)
 
 There was a whole syntax for messaging and subscribing to tags proposed, but it was never implemented; twitter never even distinguished between prefixed and inline hashtags as they did between replies and mentions.
