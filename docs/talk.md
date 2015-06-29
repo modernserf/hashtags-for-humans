@@ -1,56 +1,114 @@
 # Introduction
 *TODO: rewrite*
 
-(background: rapidly changing grid of traits)
+(rapidly changing grid of traits)
 
-what does it mean to be who you are? am i my job? am i my community? am i my country, my gender, my race? am i the intersection of all of these traits? am i a leaf node on the tree of life, an exemplar specimen of homo sapiens sapiens, with a history through my parents and my ancestors all the way back to single-celled sludge on the bottom of the ocean? do i trace my identity further still through the formation of the earth, the formation of the sun, the big bang?   
+Humans are pattern matching machines. The world around us is vast and incomprehensible, but we are able to make some sense of it by organizing messy reality into neat categories. We dismantle complex concepts and individuals into their constituent traits, to match them to prototypes, archetypes, stereotypes. We have categories baked into our language via gendered nouns and pronouns; our words themselves are categorized by parts of speech. And we create formal systems to manage this process -- taxonomies, ontologies, the relational algebra.
 
-its hard to categorize myself in a way that represents every facet of my identity -- there's always some nuance that labels cannot capture. i am a completely unique individual, i *am* a special snowflake. YOU, on the other hand --
+(linnaeus-era chart)
 
-Well, let's just say that the vastness of the world is incomprehensible, and we need some shortcuts just to do anything at all. Fortunately, humans are pattern-matching machines -- we're built to dismantle complex concepts and individuals into their constituent traits, to match them to prototypes, archetypes, stereotypes. And we create formal systems to manage this process -- taxonomies, hierarchies, the relational algebra. But today I'm going to focus on one particular system, an *in*-formal taxonomy that has become a part of our everyday lives in the last few years: the hashtag.
+Our systems of categorization reflect the times we live in. Categorical hierarchy, you know, kindgom phylum class order family genus species -- this is an echo of king prince duke count baron knight peasant. But new times call for new taxonomies. Allow me to thought-lead for a moment:
+
+(picture of shingy)
+
+The information age promises the democratization and decentralization of media, with news and ideas and conversation spreading across the world in real time. The old guard is dead -- hierarchy and linear thought is over. The world of information is coming in from every direction at once -- its a network where every node is connected. 
+
+How do we organize knowledge in 2015? The hashtag.
 
 ## Definition 
-*TODO: de-academicafy*
 
-A hashtag is a member of a vocabulary of categorization that is:
-- vernacular: tags are created by usage, not by authority
-- relational: an item in a collection can have multiple tags; having a hashtag is analogous to set membership
-- conversational: the members of a tag set, projected over time, constitute a stream; a hashtag can be used as a channel of communication
+First, let's get our terms straight. There are a lot of systems that resemble hashtags -- well beyond the scope of twitter -- but there are three traits that define the hashtags I am exploring today.
 
-## Thesis
-Hashtags have popularized a paradigm of thought that allows for more complex notions of identity than hierarchies. 
+1. Hashtags are **relational**. An item in a collection can have multiple tags, and tags can have multiple items. Hashtag membership follows the same rules as mathematical sets.
+2. Hashtags are **vernacular**. Any string can be a hashtag, and a hashtag's meaning comes entirely through usage. There is no authority that decides what a hashtag can be or what content can be tagged with it.
+3. Hashtags are **temporal**. A hashtag is not a static collection; it is an ever-flowing stream. The messages in a hashtag have a place in time, and the hashtag is a channel of communication.
 
 # hierarchy vs keywords (relational)
 ## history
-Taxonomies like the Library of Congress system, which have to be implemented in a physical space, require a system that gives each item a single location. Hierarchies are good at this. But you can only impose one hierarchy at a time; in order to handle cross-references or alternate forms of organization you need a different form of categorization altogether. 
+There is always prior art, no matter how far you look back. Information science has been around in some form at least as long as writing -- I mean, the earliest writing we have is in the form of inventories and catalogs. I'm not gonna go that far back. Instead, lets talk about libraries.
 
-One of the ways to handle these cross-cutting concerns is with keywords -- in addition to having a physical location in a hierarchy, you create a vocabulary of keywords to mark attributes of the item that you couldn't express in the hierarchy. For example, the library of congress classifications dictate where books are located, and the subject headings map topics to the different sections of the classifications hierarchy where that topic is discussed. (slide: left side is classification tree, right side is subject heading with links to branches of classification tree -- use http://www.loc.gov/rr/main/research/xrefer.html)
+Libraries are kind of like an analog database, right? They contain information, and they organize it in a way that you can find it. But books take up physical space. A book needs to be somewhere and when you're looking for books on a certain topic, you want them to be all in the same place. So you organize by category -- first in broad categories: science, philosophy, arts -- and then subcategories: geology, ethics, sculpture. You keep subdividing into smaller and smaller sections until you have the right place for everyhthing in your collection. 
+
+But you can only impose one hierarchy at a time; it must necessarily be compromised. If you want arts and technology to be top-level categories, that means that architecture and structural engineering books will be on opposite sides of the library. And what do you do about cross-references?
+
+(slide: left side is classification tree, right side is subject heading with links to branches of classification tree -- use http://www.loc.gov/rr/main/research/xrefer.html)
+
+You create a system of categorization on top of your hierarchy, with a vocabulary of keywords to mark attributes of the item that you couldn't express in the hierarchy. For example, the library of congress *classifications* dictate where books are located, and the *subject headings* map topics to the different sections of the classifications hierarchy where that topic is discussed. 
+
+*TODO: not sure this should go here. OO inheritance vs interfaces/traits*
+If you've done any programming in typed object-oriented languages like Java you've probably thought a lot about hierarchies in the form of class inheritance. You've also probably come across situations where you just cannot make an inheritance tree make sense on its own and you've used interfaces to connect classes that are similar in function but phylogenetically unrelated.
 
 This indirection is a necessary inconvenience in a physical collection -- an item in that collection needs a canonical address to prevent duplication. But indirection is how everything works on a computer. We're JavaScript programmers, we don't even _get_ to choose our bits are located in memory; duplicate references are the garbage collector's problem. We don't need our data to be stored in a way that's easy for a human to find. Categories were designed to be searched by hand, or on foot; keywords are meant to be searched by computer.
 
 ## theory
-(set theory demo using guess who?)
+Categories aren't just for books. Here's another thing we love to categorize.
 
-*TODO: OO inheritance vs interfaces/traits*
+(guess who? demo)
+
+I'm not gonna tell you that the categories that describe these people don't matter. I may be a thought leader, but I'm not _that_ naive. But we all understand that the categorization of human traits can't all fit into a single tree -- you have to think of how the traits interact. We will return the the ramifications of that later, but first I want to give you a little refresher on set theory. 
+
+Each of these people have a different collection of traits -- they have blonde hair and brown eyes and hats and mustaches -- and in the game Guess Who? you're supposed to figure out who your opponent's character is by asking yes-or-no questions about that trait. 
+
+I assure you this was tremendous fun in 1991. I think I might have had a little crush on Maria. I have no idea if this is still interesting to kids because its essentially the same as narrowing down google results.
+
+The questions you ask in guess who are filling in predicates to a big logical `AND`. This is how we could express this in javascript:
+
+```
+people.filter((p) => p.blond && p.male && p.mustache)
+```
+
+And this is one way to say that in SQL:
+```
+SELECT * 
+FROM people 
+WHERE tags LIKE "%blond%" 
+AND tags LIKE "%male%" 
+AND tags LIKE "%mustache%"
+```
+
+In the hourlong version of this talk I'll give the version of this with JOINs.
+
+Being programmers, we can't help but add features, even if we don't need 'em. So we can _improve_ Guess Who? by adding some more operators. If we add logical `OR` and `NOT` now we can express complex selections, like 
+`(and male (or blond redhead) (not mustache))`
+
+Let's flip our perspective around and look at this from the trait's perspective instead of the person's. Before we would say that Anita, Charles, David and Joe all have blond hair; instead, we'll say the set of people with blond hair includes Anita, Charles, David and Joe. The set of people with glasses are Claire, Joe, Paul, and Tom. The *intersection* of blondes and people wearing glasses is Joe.
+
+(venn diagrams)
+
+Set intersections are the overlapping parts of this venn diagram; intersection corresponds to logical `AND`. Set unions are both of the sets combined, both of the circles together. They correspond to logical `OR`. And set complements, the area outside of the circles, correspond to logical `NOT`.
+
+*TODO: is there a point to this section?*
 
 # web 2.0 (vernacular)
 ## history
-And then this happened. (picture of a tag cloud) In a typical library, the hierarchy and the keyword vocabulary are fixed, and the collection is curated by the librarians. A patron cannot add books to the collection, nor can they alter the classifications or keyword vocabulary. But the photos on flickr, or the links on delicious belong to the community -- so why shouldn't the vocabulary of categorization also belong the them? And thus the rise of user-generated taxonomy, or "folksonomy", became one of the defining characteristics of the Web 2.0 Era. Not only had we democratized information, we had democratized the organization of information.
+(picture of a tag cloud)
 
-Also, we stopped calling them "keywords" -- probably becasue that reminded us of AOL -- and started calling them tags;
+In a typical library, the hierarchy and the keyword vocabulary are fixed, and the collection is curated by the librarians. A patron cannot add books to the collection, nor can they alter the classifications or keyword vocabulary.
+
+(TODO: medical library needs different system than general library)
+
+ But the photos on flickr, or the links on delicious belong to the community -- so why shouldn't the vocabulary of categorization also belong the them? And thus the rise of user-generated taxonomy, or "folksonomy", became one of the defining characteristics of the Web 2.0 Era. Not only had we democratized information, we had democratized the organization of information.
+
+Also, we stopped calling them "keywords" -- probably becasue that reminded us of AOL -- and started calling them tags.
 
 ## pros/cons of folksonomy
 [redundant tags, tags as post metadata](http://www.metafilter.com/13955/Let-Slip-the-Blogs-of-War)
-Of course, this created a number of new problems. Without a standard vocabulary, folksonomies have problems with discovery and redundancy. Here's a metafilter post from 2002 -- note that in a post about warblogs (_very_ 2002!) we see the tags #war #blog #blogs #warblog and #warblogs. On the one hand, we're able to categorize via neologisms -- "blog" first appeared in 1999 and "warblog" was coined three months before this post -- a decentralized vocabulary can include new concepts much more quickly than a centralized one. On the other hand, a centralized system can have rules for dealing with synonyms and inflections -- a controlled vocabulary, once it were able to reference blogs at all, wouldn't have distinct terms for #blog and #blogs. A decentralized system depends on its users creating and then following conventions.
 
-*TODO: note that some terms, like warblog, fall out of use as quickly as they came in -- ephemerality is a feature*
+Of course, this created a number of new problems. Without a standard vocabulary, folksonomies have problems with discovery and redundancy. Here's a metafilter post from 2002 -- note that in a post about warblogs (_very_ 2002!) we see the tags #war #blog #blogs #warblog and #warblogs. On the one hand, we're able to categorize via neologisms -- "blog" first appeared in 1999 and "warblog" was coined *three months* before this post -- a decentralized vocabulary can include new concepts much more quickly than a centralized one. If we needed an approval committee for tag terms, warblogs would have become totally irrelevant by the time they were added to the tag vocbulary.
+
+On the other hand, a centralized system can have rules for dealing with synonyms and inflections -- a controlled vocabulary, once it were able to reference blogs at all, wouldn't have distinct terms for #blog and #blogs. Nor does a controlled vocabulary have namespace collisions: posts tagged with #football will either be about soccer or hand-egg, but not both. A decentralized system can only hope its users figure out some conventions and choose to follow them.
 
 Also note that the set of tags includes a different kind of metadata -- the #brokenlink tag is about the functionality of the post, not the content to which it once referenced.
 
 ## meeting the challenges
-(image of askme sidebar with popular tags and complete category list)One solution for this is an ontology that includes both a fixed vocabulary of categories, often mapping to classical hierarchies, and an open vocabulary of non-hierarchical tags. This is the approach that's used in wordpress blogs and ask metafilter questions. 
 
-*TODO: Compare with DOM tree, fixed tags, open classes*
+(image of askme sidebar with popular tags and complete category list)
+
+One solution for this is an ontology that includes both a fixed vocabulary of categories, often mapping to classical hierarchies, and an open vocabulary of non-hierarchical tags. This is the approach that's used in wordpress blogs and ask metafilter questions. 
+
+(dom elements on left side, class names on right side)
+
+This is also the approach taken by browsers. We have a fixed vocabulary of general-purpose tags -- some of them have special functionality but most of them are just common classifictions of containers. But we can also create our own terms with meaning specific to the site. Every element on the page must have one and only tag type, but they can have as few or as many classes as they want. 
 
 (autocomplete tags) Another common solution is to have user-defined tags as the sole form of taxonomy, but encourage users, through the UI, to prefer existing terms over novel ones. 
 
