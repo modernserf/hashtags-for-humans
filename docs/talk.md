@@ -86,7 +86,7 @@ Set intersections are the overlapping parts of this venn diagram; intersection c
 
 In a typical library, the hierarchy and the keyword vocabulary are fixed, and the collection is curated by the librarians. A patron cannot add books to the collection, nor can they alter the classifications or keyword vocabulary.
 
-(TODO: medical library needs different system than general library)
+*(TODO: medical library needs different system than general library)*
 
 (picture of a tag cloud)
 
@@ -113,9 +113,25 @@ One solution for this is an ontology that includes both a fixed vocabulary of ca
 
 This is also the approach taken by browsers. We have a fixed vocabulary of general-purpose tags -- some of them have special functionality but most of them are just common classifictions of containers. But we can also create our own terms with meaning specific to the site. Every element on the page must have one and only tag type, but they can have as few or as many classes as they want. 
 
-(autocomplete tags) Another common solution is to have user-defined tags as the sole form of taxonomy, but encourage users, through the UI, to prefer existing terms over novel ones. 
+(autocomplete tags) Another common solution is to have user-defined tags as the sole form of taxonomy, but encourage users, through the UI, to prefer existing terms over novel ones. This is the preferred system for newer networks that do not have distinct categories and tags, like twitter and tumblr. 
 
-*TODO: Facebook gender selector -- note that it allows freeform gender now?*
+There's one particular use of this that I want to explore in depth: Facebook's gender selector. Before this came out, most of the gender options I had seen were either strictly male/female or freeform text fields. A few offered more choices.
+
+(fetlife gender options)
+
+One popular social networking site offered these options for gender. This is a lot of options, but it reveals a paradox: the more options you provide, the more you appear to be excluding -- if genderqueer can make the list, why not pangender, why not two-spirit?. Its kind of a mess from a UI perspective, too -- its a lot of items that don't seem to be in any particular order. There are a couple of redundant or ambiguous items that would be a lot more straightforward if you could combine terms. 
+
+But when Facebook adopted the tag-based gender options, they didn't just drop in a jQuery library and call it a day; there are specific design choices being made in this form.
+
+- it cannot be empty. You have to select at least one option, though that option can be "Agender"
+- most tag fields are abstract and can end up like junk drawers for metadata. Tags in the gender field have inherent context, even if the meaning is not known.
+- The form reflects the subject matter: gender is simple for many, but complex for others.
+- Therefore it has multiple tiers of defaults: male / female, known tags, and freeform tags.
+- it has a separate (limited option) selector for pronouns
+- There are a lot of options that seem to be redundant. This is intentional. These tags are being used for *personal expression* as much as they are for selection 
+- it wasn't initially freeform; that was added later. It launched with over 50 gender options but even that was not sufficient. 50 is more than enough options for many people, but its quite limited if you're thinking of it as the vocabulary for expressing the nuance of how one exactly relates to society's expectations of masculinity and femininity.
+
+
 
 (stack overflow/wikipedia) You can also harness the internet's limitless supply of pedantry and allow community moderators to normalize the usage and inflection of tags. *TODO: more here: community standards, anarchy vs bureaucracy*
 
