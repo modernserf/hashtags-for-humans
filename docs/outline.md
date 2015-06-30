@@ -3,7 +3,7 @@
 A hashtag is a member of a vocabulary of categorization that is:
 - vernacular: tags are created by usage, not by authority
 - relational: an item in a collection can have multiple tags; having a hashtag is analogous to set membership
-- conversational: the members of a tag set, projected over time, constitute a stream; a hashtag can be used as a channel of communication
+- conversational: A hashtag isn't just collection; its a channel of communication. 
 
 ## Thesis
 Hashtags have popularized a paradigm of thought that allows for more complex notions of identity than hierarchies. 

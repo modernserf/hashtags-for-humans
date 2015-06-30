@@ -16,13 +16,11 @@ How do we organize knowledge in 2015? The hashtag.
 
 ## Definition 
 
-*TODO: choose better term than temporal and stick with it*
-
 First, let's get our terms straight. There are a lot of systems that resemble hashtags -- well beyond the scope of twitter -- but there are three traits that define the hashtags I am exploring today.
 
 1. Hashtags are **relational**. An item in a collection can have multiple tags, and tags can have multiple items. Hashtag membership follows the same rules as mathematical sets.
 2. Hashtags are **vernacular**. Any string can be a hashtag, and a hashtag's meaning comes entirely through usage. There is no authority that decides what a hashtag can be or what content can be tagged with it.
-3. Hashtags are **temporal**. A hashtag is not a static collection; it is an ever-flowing stream. The messages in a hashtag have a place in time, and the hashtag is a channel of communication.
+3. Hashtags are **conversations**. A hashtag isn't just collection; its a channel of communication. One *participates in* and *responds to* a hashtag. 
 
 # hierarchy vs keywords (relational)
 ## history
@@ -137,6 +135,8 @@ A third approach -- and one that's necessary when you're dealing with user-gener
 
 We'll take it as given that community management is necessary for dealing with spam and trolls. Things get more complicated when you edit for its usefulness to the product.
 
+*(TODO: banned instagram hashtags)*
+
 [death of meta tags](http://blog.stackoverflow.com/2010/08/the-death-of-meta-tags/)
 
 Knowledge bases like stack overflow and wikipedia depend on their posts being well organized for both editors and readers, and managing metadata is as much a part of that as managing content. Editorial policy isn't just normalizing #blogs and #blogging to #blog, it also involves choosing what information is purposefully not captured. This post is discussing why qualitative tags like #best-practices don't fit the mission of stack overflow, and why they have been removed. Its not the ironclad law of formal hierarchy, but its not the anarchy of pure folksonomy either; these sites compromise expressivity to provide more important features.
@@ -171,10 +171,11 @@ There was a whole syntax for messaging and subscribing to tags proposed, but it 
 
 Twitter combined the real-time conversational aspects of IRC with the authorial collection aspects of blogging. It needed a system of grouping conversations into a channel and it needed a system for tagging posts with metadata. Hashtags combined these features into a single idiom.
 
-*TODO: examples of tag searches used as channels, note URL pattern*
+[posting in this tag](https://twitter.com/search?q=%22posting%20in%20this%20tag%22&src=typd)
 
-- tumblr tags as community anchors
-- twitter inherits traits from both
+[get out of this tag](https://twitter.com/search?q=%22get%20out%20of%20this%20tag%22&src=typd)
+
+A hashtag is more than the sum of its tweets. Tags at their best (and their worst) are entities in their own right -- there is as meaning in the connections as there is in the content. People talk about "posting in this tag" and tell each other to "get out of this tag" because tags are shared spaces, and tagging is inherently a group participation. Unless you take pains to identify the tag without naming it, eg "👾🐊", commentary and discussion about a tag also becomes part of the tag.
 
 # Conclusion: Thinking in Tags
 ## vernacular: hashtags in conversation
