@@ -131,9 +131,21 @@ But when Facebook adopted the tag-based gender options, they didn't just drop in
 - There are a lot of options that seem to be redundant. This is intentional. These tags are being used for *personal expression* as much as they are for selection 
 - it wasn't initially freeform; that was added later. It launched with over 50 gender options but even that was not sufficient. 50 is more than enough options for many people, but its quite limited if you're thinking of it as the vocabulary for expressing the nuance of how one exactly relates to society's expectations of masculinity and femininity.
 
+(stack overflow) 
 
+A third approach -- and one that's necessary when you're dealing with user-generated tags -- is that you can enforce editorial policy. One can do this with a hired staff, but more typically one tries to harness the internet's limitless supply of pedantry and deputize moderators to normalize the usage and inflection of tags to match community standards.
 
-(stack overflow/wikipedia) You can also harness the internet's limitless supply of pedantry and allow community moderators to normalize the usage and inflection of tags. *TODO: more here: community standards, anarchy vs bureaucracy*
+We'll take it as given that community management is necessary for dealing with spam and trolls. Things get more complicated when you edit for its usefulness to the product.
+
+[death of meta tags](http://blog.stackoverflow.com/2010/08/the-death-of-meta-tags/)
+
+Knowledge bases like stack overflow and wikipedia depend on their posts being well organized for both editors and readers, and managing metadata is as much a part of that as managing content. Editorial policy isn't just normalizing #blogs and #blogging to #blog, it also involves choosing what information is purposefully not captured. This post is discussing why qualitative tags like #best-practices don't fit the mission of stack overflow, and why they have been removed. Its not the ironclad law of formal hierarchy, but its not the anarchy of pure folksonomy either; these sites compromise expressivity to provide more important features.
+
+But in many cases freedom of expression is the feature. The restrictions that are useful for a purpose-made knowledge base are harmful for a general means of communication.
+
+I can't praise Facebook's freeform gender selection and not condemn their real name policy. Names are -- I feel some thought leadering coming on -- names are the original metadata. Most names use family lineage as a form of categorization, and many of them are literally a product of the patriarchy. Facebook has business value tied up in real names, but there is complementary cost to users who are stuck with names that make them easy for advertisers to track, instead of the names that they use. 
+
+Freeform metadata is powerful for developers and meaningful to users. Don't be afraid of it.
 
 # channels
 ## history
