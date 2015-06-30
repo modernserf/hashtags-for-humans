@@ -177,25 +177,47 @@ Twitter combined the real-time conversational aspects of IRC with the authorial 
 
 A hashtag is more than the sum of its tweets. Tags at their best (and their worst) are entities in their own right -- there is as meaning in the connections as there is in the content. People talk about "posting in this tag" and tell each other to "get out of this tag" because tags are shared spaces, and tagging is inherently a group participation. Unless you take pains to identify the tag without naming it, eg "👾🐊", commentary and discussion about a tag also becomes part of the tag.
 
-# Conclusion: Thinking in Tags
-## vernacular: hashtags in conversation
-- hashtags have gone from an secondary organizational aid to a part of our daily vocabulary 
-- we develop new and unexpected idioms around hashtags
-- tag as parenthetical aside (on blogs)
-- hashtag used as interjection
-    + used as interjection in conversation (willow pape "hashtag: ratchet.")
+# Conclusion
+When the digerati of 2007 were first discussing the modern hashtag, there was an understanding that it wasn't going to be limited to any single site. This was the heady days of microformats and the semantic web; my forebears in thought-leadership had dreams of tags providing the metadata to unify human and machine interfaces.
 
-## conversational: tag-as-channel used as political movement
-- social media is designed to facilitate rapid spread of memes
-- not just image macros but all kinds of urban folklore
-- ideas of social movements travel as memes 
-- "hashtag activism" as derisive term -- corollaries with "awareness ribbon"
-- hashtag as metonym for social movement with twitter presence but actions elsewhere
-- arguing merits of movement's tenets by hashtag name: #AllLivesMatter = "why not Equalism?"
-- hashtag as affiliation with movement -- flying a hashflag
+## Vernacular
+
+(willow pape "hashtag: ratchet.")
+
+That's not quite how it worked out. Hashtags couldn't live up to their utopian vision, but they've become much more a part of society than they could have imagined. Tags are not only a means of conversation but now also _part of_ conversation. 
+
+(blog tags as parenthetical aside)
+
+Because there are no _rules_ for tags, our usage can reflect all kinds of purposes -- we develop idioms for hashtags. They're used as interjections, parenthetical asides, and as a means to mock the overuse of hashtags.
+
+## Conversational
+
+This is all powered by the duality of hashtags as a collection of ideas and the channel for broadcasting them. I would bet that very few of us participate in any hashtags on a daily basis, but everyone here is familiar with them as a presence in society. (If not, the last 15 minutes have probably been very confusing.)
+
+(All houses matter)
+
+- there's no rules for what "value" a hashtag can have, can be as trite as #TheDress or as meaningful as #BlackLivesMatter
+- the tag, when used as a label carries meaning in the way that the string does not; its the difference betweeen descriptors and proper nouns
+- the meaning evolves beyond the label
+- but that doesn't stop people from arguing about the name: #AllLivesMatter = "why not Equalism?"
+
+(rainbow avatars on facebook)
+
+A lot of our ideas about social movements haven't caught up to social media; we even have a pejorative for this: "Hashtag Activism". Its easy to tweet #LoveWins or add a rainbow to your profile picture -- but what are you really contributing? 
+
+I empathize with this perspective. I was as much a Holden Caulfield as anyone else and I recognize phoniness and hypocrisy in the world. But I also understand that even the most faddish solidarity movements change the conversation, and that there are people within the movement with more than a symbolic contribution.
+
+(#FreeBree captioned image)
+(#BlackLivesMatter grafitti on confederate memorial)
+
+I'm not going to tell you that tweeting #BlackLivesMatter is going to change the world, but acts of civil disobedience are also just symbolic gestures -- until they aren't. This is the conversation we're having **TODO TODO**
 
 ## relational: tag-as-set and intersectionality
-*TODO: intersectionality for programmers?*
+
+
+
+(*TODO: intersectionality for programmers?*)
+
 > id like some sort of intersectionality example that's more immediately gemane -- maybe i start with "programmers" as a category, and then break it down first by "safe" properties -- e.g. stack -- and how their experiences can be wildly different and they have different community needs; then break down by gender/race/class etc and the intersectionalities therein. 
 
 > And programmers have intense boundary policing about the most asinine stuff -- tabs vs spaces, vim vs emacs, etc. and "best practices" are more often than not as rooted in tradition and accidents of history as any political ideology?
