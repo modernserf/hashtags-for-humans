@@ -30,12 +30,11 @@ Libraries are kind of like an analog database, right? They contain information, 
 
 But you can only impose one hierarchy at a time; it must necessarily be compromised. If you want arts and technology to be top-level categories, that means that architecture and structural engineering books will be on opposite sides of the library. And what do you do about cross-references?
 
-(slide: left side is classification tree, right side is subject heading with links to branches of classification tree -- use http://www.loc.gov/rr/main/research/xrefer.html)
+(left side is classification tree, right side is subject heading with links to branches of classification tree -- use http://www.loc.gov/rr/main/research/xrefer.html)
 
 You create a system of categorization on top of your hierarchy, with a vocabulary of keywords to mark attributes of the item that you couldn't express in the hierarchy. For example, the library of congress *classifications* dictate where books are located, and the *subject headings* map topics to the different sections of the classifications hierarchy where that topic is discussed. 
 
-*TODO: not sure this should go here*
-
+*(TODO: expand or cut)*
 If you've done any programming in typed object-oriented languages like Java you've probably thought a lot about hierarchies in the form of class inheritance. You've also probably come across situations where you just cannot make an inheritance tree make sense on its own and you've used interfaces to connect classes that are similar in function but phylogenetically unrelated.
 
 This indirection is a necessary inconvenience in a physical collection -- an item in that collection needs a canonical address to prevent duplication. But indirection is how everything works on a computer. We're JavaScript programmers, we don't even _get_ to choose our bits are located in memory; duplicate references are the garbage collector's problem. We don't need our data to be stored in a way that's easy for a human to find. Categories were designed to be searched by hand, or on foot; keywords are meant to be searched by computer.
@@ -88,7 +87,7 @@ In a typical library, the hierarchy and the keyword vocabulary are fixed, and th
 
 (picture of a tag cloud)
 
- But the photos on flickr, or the links on delicious belong to the community -- so why shouldn't the vocabulary of categorization also belong the them? And thus the rise of user-generated taxonomy, or "folksonomy", became one of the defining characteristics of the Web 2.0 Era. Not only had we democratized information, we had democratized the organization of information.
+But the photos on flickr, or the links on delicious belong to the community -- so why shouldn't the vocabulary of categorization also belong the them? And thus the rise of user-generated taxonomy, or "folksonomy", became one of the defining characteristics of the Web 2.0 Era. Not only had we democratized information, we had democratized the organization of information.
 
 Also, we stopped calling them "keywords" -- probably becasue that reminded us of AOL -- and started calling them tags.
 
@@ -178,7 +177,7 @@ Twitter combined the real-time conversational aspects of IRC with the authorial 
 A hashtag is more than the sum of its tweets. Tags at their best (and their worst) are entities in their own right -- there is as meaning in the connections as there is in the content. People talk about "posting in this tag" and tell each other to "get out of this tag" because tags are shared spaces, and tagging is inherently a group participation. Unless you take pains to identify the tag without naming it, eg "👾🐊", commentary and discussion about a tag also becomes part of the tag.
 
 # Conclusion
-When the digerati of 2007 were first discussing the modern hashtag, there was an understanding that it wasn't going to be limited to any single site. This was the heady days of microformats and the semantic web; my forebears in thought-leadership had dreams of tags providing the metadata to unify human and machine interfaces.
+When the digerati of 2007 were first discussing the modern hashtag, there was an understanding that it wasn't going to be limited to any single site. This was the heady days of microformats and the semantic web; my forebears in thought-leadership had dreams of tags providing the metadata to unify human and machine interfaces across the whole internet.
 
 ## Vernacular
 
@@ -188,7 +187,7 @@ That's not quite how it worked out. Hashtags couldn't live up to their utopian v
 
 (blog tags as parenthetical aside)
 
-Because there are no _rules_ for tags, our usage can reflect all kinds of purposes -- we develop idioms for hashtags. They're used as interjections, parenthetical asides, and as a means to mock the overuse of hashtags.
+Because there are no _rules_ for tags, our usage can reflect all kinds of purposes -- we develop idioms for hashtags. They're used as interjections, parenthetical asides, and as a means to #mock the #overuse of #hashtags.
 
 ## Conversational
 
@@ -197,7 +196,7 @@ This is all powered by the duality of hashtags as a collection of ideas and the 
 (All houses matter)
 
 - there's no rules for what "value" a hashtag can have, can be as trite as #TheDress or as meaningful as #BlackLivesMatter
-- the tag, when used as a label carries meaning in the way that the string does not; its the difference betweeen descriptors and proper nouns
+- the tag, when used as a label carries meaning in the way that the string does not; hasgtags are proper nouns
 - the meaning evolves beyond the label
 - but that doesn't stop people from arguing about the name: #AllLivesMatter = "why not Equalism?"
 
@@ -216,7 +215,7 @@ I'm not going to tell you that tweeting #BlackLivesMatter is going to change the
 
 For all the ways that tags can unite people around a common idea, they're not an unmitigated force for good. Any woman on the internet can tell you that. 
 
-- tags are useful as a paradigm of thought
+- tags are useful as a paradigm of thought, when thinking about one's own identity
 - identity cannot be expressed only as a list of traits, but at least it acknowledges that you are multifaceted 
 - its easy to mock tumblr users for identifying as a collection of jargon, but it serves a purpose for them
 - what were they doing before? probably just feeling like an alien
