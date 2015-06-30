@@ -214,12 +214,14 @@ I'm not going to tell you that tweeting #BlackLivesMatter is going to change the
 
 ## relational: tag-as-set and intersectionality
 
+For all the ways that tags can unite people around a common idea, they're not an unmitigated force for good. Any woman on the internet can tell you that. 
 
-
-(*TODO: intersectionality for programmers?*)
-
-> id like some sort of intersectionality example that's more immediately gemane -- maybe i start with "programmers" as a category, and then break it down first by "safe" properties -- e.g. stack -- and how their experiences can be wildly different and they have different community needs; then break down by gender/race/class etc and the intersectionalities therein. 
-
-> And programmers have intense boundary policing about the most asinine stuff -- tabs vs spaces, vim vs emacs, etc. and "best practices" are more often than not as rooted in tradition and accidents of history as any political ideology?
-But now this feels obvious again
-
+- tags are useful as a paradigm of thought
+- identity cannot be expressed only as a list of traits, but at least it acknowledges that you are multifaceted 
+- its easy to mock tumblr users for identifying as a collection of jargon, but it serves a purpose for them
+- what were they doing before? probably just feeling like an alien
+- tags as markers of identity show you that you're not alone
+- we really are all special snowflakes; tags provide a way to find common ground
+- this also gives us a model for understanding differences
+- intersectionality -- literally identity set intersections
+- humans are pattern matching machines -- here's a new way to match patterns 
