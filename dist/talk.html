@@ -21,20 +21,27 @@
       vertical-align: middle;
 
     }
+    .remark-slide-content li {
+      font-size: 30px;
+    }
 
     </style>
   </head>
   <body>
 <textarea id="source">
-      # Hashtags for Humans
+
+![Hashtags for Humans](img/title.png)
+---
+
+# Humans are pattern matching machines.
 
 ???
 
 Humans are pattern matching machines. The world around us is vast and incomprehensible, but we are able to make some sense of it by organizing messy reality into neat categories. We dismantle complex concepts and individuals into their constituent traits, to match them to prototypes, archetypes and stereotypes.
 
-Categories and hierarchies are built into our culture at the lowest levels: genders are baked into nouns and pronouns; family lineage -- literally, "the patriarchy" -- is written into our names. When we give names to abstract concepts; when we say these are dogs and these are rocks and these are songs, we are categorizing.
+Categories and hierarchies are built into our culture at every level. When we give names to abstract concepts; when we say these are dogs and these are rocks and these are songs, we are categorizing. We categorize ourselves, too: categories of gender are baked into nouns and pronouns, and family lineage -- literally, "the patriarchy" -- is written into our names.
 
-Given that this is a room full of programmers, I think you'll agree that the only thing we love more than making rules is making rules for making rules. So we make formal systems to manage our hierarchies.
+Categories are rules for identity. The only thing we love more than making rules is making rules for making rules, so we make formal systems to manage our hierarchies.
 
 ---
 
@@ -46,7 +53,7 @@ These systems reflect the times in which they are created. Linnaeus' hierarchy o
 
 ![shingy](img/shingy.jpg)
 ???
-The information age promises the democratization and decentralization of media, with news and ideas and conversation spreading across the world in real time. Hierarchy and linear thought have no place in cyberspace. The world of information is coming in from every direction at once -- its a network where every node is connected.
+The information age promises the democratization and decentralization of media, with news and ideas and conversation spreading across the world in real time. Hierarchy and linear thought have no place in cyberspace. In the world of tomorrow, information is coming in from every direction at once -- its a network where every node is connected.
 
 How do we organize knowledge in 2015? The hashtag.
 
@@ -58,12 +65,18 @@ First, let's get our terms straight. Many of us already have a pretty good idea 
 
 ---
 
+- Relational
+???
 1. Hashtags are **relational**. An item in a collection can have multiple tags, and tags can have multiple items. Hashtag membership follows the same rules as mathematical sets.
 --
 
+- Vernacular
+???
 2. Hashtags are **vernacular**. Any string can be a hashtag, and a hashtag's meaning comes entirely through usage. There is no authority that decides what a hashtag can be or what content can be tagged with it.
 --
 
+- Conversational
+???
 3. Hashtags are **conversations**. A hashtag isn't just collection; its a channel of communication. One *participates in* and *responds to* a hashtag.
 
 ---
@@ -92,23 +105,25 @@ This indirection is a necessary inconvenience in a physical collection -- an ite
 
 Hierachies were designed to be searched by hand, and on foot; keywords are meant to be searched by computer.
 
----
-
-## Demo
-???
 So I've been talking about keywords and set theory in sort of abstract terms. Let's make it a little more concrete.
 
-There's this children's game called Guess Who?, where players take turns asking yes-or-no questions about the characters, like "do they have brown hair?" or "are they wearing a hat?", in order to figure out who their opponent has picked. It's like 20 questions for people without imagination.
+---
+
+![Guess Who?](img/guesswho2.jpg)
+* *Game cards do not actually talk*
+???
+
+There's this children's game called Guess Who?, where players take turns asking yes-or-no questions about the characters, like "do they have brown hair?" or "are they wearing glasses?", in order to figure out who their opponent has picked. It's like 20 questions for people without imagination.
 
 Well that's not fair. I thought this was trememdous fun in 1991. Plus I think I had a little crush on Maria. But the skills it taught me were how to judge people and how to do an advanced Google search.
 
-Effectively what you're doing in this game is filtering a dataset with a series of logical predicates `AND`ed together.
+When you're asking a succession of yes-or-no questions as you do in this game, you're filtering a dataset with a series of logical predicates `AND`ed together.
 
-This is how we could express this in javascript:
+This is how we could express our questions this in javascript:
 
 ---
 ```
-people.filter((p) => p.tags.blond && p.tags.male && p.tags.mustache)
+people.filter((p) => p.tags.blond && p.tags.glasses)
 ```
 ???
 
@@ -118,34 +133,16 @@ And this is one way to say that in SQL:
 SELECT *
 FROM people
 WHERE tags LIKE "%blond%"
-AND tags LIKE "%male%"
-AND tags LIKE "%mustache%"
+AND tags LIKE "%glasses%"
 ```
 ???
 I don't have enough screen space to show the version of this with JOINs.
 
 ---
-![intersection](img/venn-intersect.png)
+![Guess Who? sets](img/guess-who-sets.jpg)
 ???
-Let's flip our perspective around and look at this from the trait's perspective instead of the person's. Before we would say that Anita, Charles, David and Joe all have blond hair; instead, we'll say the set of people with blond hair includes Anita, Charles, David and Joe. The set of people with glasses are Claire, Joe, Paul, and Tom. The *intersection* of blondes and people wearing glasses is Joe.
 
-If you're anything like me you're probably thinking "this game needs more features". Its already based around logical `AND` -- let's add `OR` and `NOT`. That's just what I did. Now we can express complex, nested selections, like:
-
-```
-(and male
-     (or blond redhead)
-     (not mustache))
-```
-
----
-![union](img/venn-union.png)
-???
-There are set theory equivalences here, too: Unions  are both of the sets combined, both of the circles together. They correspond to logical `OR`.
-
----
-![complement](img/venn-complement.png)
-???
-And set complements, the area outside of the circles, correspond to logical `NOT`.
+We've been talking about this in terms of the people; let's flip our perspective around and look at this in terms of the traits. Before we would say that Anita, Charles, Eric, David and Joe all have blond hair; instead, we'll say the set of people with blond hair includes Anita, Charles, Eric, David and Joe. The set of people with glasses are Claire, Joe, Paul, Sam and Tom. The *intersection* of blondes and people wearing glasses is Joe.
 
 What does this have to do with hashtags or humans? Well, when we see tags in the wild, we tend to see them in clusters -- Twitter's length constraints prevent exhaustive tagging, but most sites do not, and posts will have many tags. Likewise, in many cases a tag will be associated with many posts. There's a many-to-many relationship between posts and tags. This is the same relationship model Guess Who? uses for people and their traits.
 ---
@@ -154,7 +151,7 @@ What does this have to do with hashtags or humans? Well, when we see tags in the
 ???
 ## History
 
-Let's fast-forward a little bit to the early 2000s, the Web 2.0 Years. The internet had always been a social place on Usenet and BBSes, but the seeds of what we recognize as Social Media today were being sown.
+Let's fast-forward a little bit to the early 2000s, the Web 2.0 Years. The internet had always been a social place on Usenet and BBSes, but the direct ancestors of today's Social Media were springing up in this era.
 
 The library model doesn't quite work for the social web. In a typical library, the hierarchy and the keyword vocabulary are fixed, and the collection is curated by the librarians. A patron cannot add books to the collection, nor can they alter the classifications or keyword vocabulary.
 
@@ -188,20 +185,11 @@ One solution for this is an ontology that includes both a fixed vocabulary of ca
 ![html tag list](img/html-tags.png)
 
 ```
-.actions
-.active
-.app-logo
-.app-message
-.app-toggle
-.app-toggle__wrap
-.apply
-.axis-label
-.axis-x-label
-.back
-.bar-name
-.bar-top-label
-.bar-value
-.bars-wrapper
+.actions        .active           .app-logo
+.app-message    .app-toggle       .app-toggle__wrap
+.apply          .axis-label       .axis-x-label
+.back           .bar-name         .bar-top-label
+.bar-value      .bars-wrapper     .brand-container
 ```
 ???
 
@@ -216,9 +204,9 @@ There's one particular use of this that I want to explore in depth: Facebook's g
 ![fetlife gender options](img/fetlife.png)
 ???
 
-This particularly progressive social networking site offered these options for gender. This is a lot of options, but it reveals a paradox: the more options you provide, the more you appear to be excluding -- if genderqueer can make the list, why not pangender? Why should use a term that's pretty close in definition but uses terms that make me uncomfortable?
+This particularly progressive social networking site offered these options for gender. This is a lot of options, but it reveals a paradox: the more options you provide, the more you appear to be excluding -- if genderqueer can make the list, why not pangender? Should you use a term that used to be correct but is now archaic?
 
-It's kind of a mess from a UI perspective, too -- there are a lot of items and they don't seem to be in any particular order. There are a couple of redundant or ambiguous items that would be a lot more straightforward if you could combine terms.
+It's kind of a mess from a UI perspective, too -- there are a lot of items and they don't seem to be in any particular order. There are redundant and ambiguous items that would work better if you could combine terms.
 
 ---
 ![Facebook gender options](img/facebook_gender.gif)
@@ -233,10 +221,13 @@ But when Facebook adopted the tag-based gender options, they didn't just drop in
 - There are a lot of options that seem to be redundant. This is intentional. These tags are being used for *personal expression* as much as they are for selection
 - it wasn't initially freeform; that was added later. It launched with over 50 gender options but even that was not sufficient. 50 is more than enough options for many people, but its quite limited if you're thinking of it as the vocabulary for expressing the nuance of how one exactly relates to society's expectations of masculinity and femininity.
 
+---
 ### Restricting tags
+???
+
 A third approach is that you can use human moderators to enforce community standards. One can do this with a hired staff, but in many cases its more efficient to harness the internet's limitless supply of pedantry and deputize users as moderators.
 
-We'll take it as given that community management is necessary for dealing with spam and trolls. Sites like Instagram that have policies against nudity and illegal activity blacklist tags like #pussy and #weed from search results. (They also blocked the eggplant and peach emojis for similar reasons.) Things get a little more complicated when you regulate for quality.
+We'll take it as given that community management is necessary for dealing with spam and trolls. Sites like Instagram that have policies against nudity and illegal activity blacklist tags like #pussy and #weed from search results. (They also blocke the eggplant emoji for similar reasons.) Things get a little more complicated when you regulate for quality.
 
 ---
 ![death of meta tags](img/meta-tagging.png)
@@ -247,11 +238,7 @@ Knowledge bases like stack overflow and wikipedia depend on their posts being we
 But in many cases freedom of expression is the feature. Twitter could do a lot to improve the quality of discourse on its service but removing subjective hashtags ain't it. The restrictions that are useful for a purpose-made knowledge base are detrimental to a general means of communication.
 
 ---
-# channels
-???
-## history
-
----
+# Channels
 ![first use of hashtag on twitter](img/first-hashtag.png)
 ???
 
@@ -261,13 +248,9 @@ We've gotten this far and we still haven't answered the biggest question of them
 ![# because of IRC convention and it was easy to type on T-9 phones in 2007! (Pre-touch!)](img/hashtag-tldr.png)
 ???
 
-A little background: IRC is a decentralized chatroom protocol that predates the web. The rooms are called channels and public channels are marked with a hash symbol; on many servers any user can create a channel. Channels _are_ a form of categorization, but channels are intended to be a single, long-running discussion with real-time participation.
+A little background: IRC is a chatroom protocol that predates the web. Rooms—or 'channels'—are marked with a hash symbol and are intended to act like categoies: a single, long-running discussion with real-time participation. IRC channels are vernacular and conversational, but they are not relational; there is no system for cross-referencing posts across channels.
 
-IRC channels are vernacular and conversational, but they are not relational; there is no system for cross-referencing. Messages can be cross-posted but this creates unconnected copies. On many IRC servers cross-posting is a bannable offense.
-
-In 2006, prior to the first twitter hashtags, Jaiku, a now-forgotten microblogging system allowed you to message groups by starting a post with a hashtagged group name. If the group didn't already exist, this would create it. This was still more channel-oriented than tag-oriented; you were messaging the group as you would message another user; you couldn't "mention" multiple groups. Tagged messages would go into a channel *instead of* the main feed.
-
-When hashtags came to Twitter, there was no native support for this sort of thing. Much like mentions and retweets, they began as conventions that would only later be proper features. This meant that early hashtags functioned like keywords for twitter's existing search system, which was completely agnostic towards search terms.
+When hashtags came to Twitter, they began as conventions that would only later be proper features, much like retweets and mentions. This meant that early hashtags functioned like keywords for twitter's existing search system, which was completely agnostic towards search terms.
 
 ---
 ![proposed hashtag syntax from messina's blog](img/tag-syntax.png)
@@ -275,7 +258,16 @@ When hashtags came to Twitter, there was no native support for this sort of thin
 
 There was a whole syntax for messaging and subscribing to tags proposed, but it was never implemented; nor did twitter ever distinguish between posts starting with tags vs those containing them, as they would with replies and mentions.
 
-Twitter's benign neglect allowed the hashtag to adapt to the unique nature of the network: becauseTwitter combines the real-time conversational aspects of IRC with the authorial collection aspects of blogging, it needs systems for both grouping conversations into a channel and tagging posts with metadata. Hashtags combined these features into a single idiom and acheived both.
+Twitter's benign neglect allowed the hashtag to adapt to the unique nature of the network: because Twitter combines the real-time conversational aspects of IRC with the authorial collection aspects of blogging, it needs systems for both grouping conversations into a channel and tagging posts with metadata. Hashtags combined these features into a single idiom and acheived both.
+
+---
+
+![](img/get-out-1.png)
+![](img/get-out-2.png)
+![](img/get-out-3.png)
+
+
+???
 
 A hashtag is more than the sum of its tweets. Tags at their best (and their worst) are entities in their own right -- there is as meaning in the connections as there is in the content. People talk about "posting in this tag" and tell each other to "get out of this tag" because tags are shared spaces, and tagging is inherently a group participation. Unless you take pains to identify the tag without naming it, eg:
 
@@ -342,10 +334,10 @@ It's fashionable to mock people who use the idioms of hashtags to define themsel
 So in a lot of ways, I envy the generation that's growing up in a tagged world. Now, I may be a thought leader but I'm not an idiot -- Hashtags will not save the world. But the dream of the internet is a place where people all over the world can meet others that share their esoteric interests while also exchanging new ideas. As asinine as this sounds, hashtags give us both a way to conceptualize this and a way to make it happen, and I'm feeling optimistic.
 
     </textarea>
- <script src="https://gnab.github.io/remark/downloads/remark-latest.min.js">
-    </script>
-    <script>
-var slideshow = remark.create();
-    </script>
+<script src="https://gnab.github.io/remark/downloads/remark-latest.min.js"></script>
+<script>
+      window.remark.create();
+
+</script>
   </body>
 </html>
