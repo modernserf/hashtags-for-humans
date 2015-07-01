@@ -32,13 +32,15 @@ First, let's get our terms straight. Many of us already have a pretty good idea 
 ## History
 Let's start with tags as a categorization system. The concepts of relational categorization predates the web and even computers by hundreds of years. I don't have time for quite that much background. Instead, let's go to the library.
 
+(library)
+
 Libraries are kind of like an analog database, right? They contain information, and they organize it in a way that you can find it. But books take up physical space. A book needs to _be_ somewhere. If you have to put a book _somewhere_ its often helpful to put it with other books of the same kind -- then you don't need to know exactly where every book is, just how to find the category.
 
 If you're the super-organized type, like I imagine most librarians are, you'd organize your categories into a hierarchy. At the top of the hierarchy you have broad classifications like science, philosophy, arts; below them you segment into finer-grained sections like geology, ethics, sculpture. You keep subdividing into smaller and smaller sections until you have the right place for everyhthing in your collection.
 
 The problem with this is that you can only impose one hierarchy at a time; it must necessarily be compromised. If you want arts and technology to be top-level classifications, that means that architecture and structural engineering books could be on opposite sides of the library. What do you do with topics that don't fit into your hierarchy?
 
-(left side is classification tree, right side is subject heading with links to branches of classification tree -- use http://www.loc.gov/rr/main/research/xrefer.html)
+(subject heading map)
 
 You create a system of categorization on top of your hierarchy, with a vocabulary of keywords to mark attributes of the item that you couldn't express in the hierarchy. For example, the library of congress *classifications* is the hierarchy that dictates where books are located. The *subject headings* map topics to the different branches of the classifications hierarchy where that topic is discussed. 
 
@@ -97,7 +99,7 @@ Let's fast-forward a little bit to the early 2000s, the Web 2.0 Years. The inter
 
 The library model doesn't quite work for the social web. In a typical library, the hierarchy and the keyword vocabulary are fixed, and the collection is curated by the librarians. A patron cannot add books to the collection, nor can they alter the classifications or keyword vocabulary.
 
-(picture of a tag cloud)
+(tag cloud)
 
 But the photos on flickr, or the links on delicious belong to the community -- so why shouldn't the vocabulary of categorization also belong the them? And thus the rise of user-generated taxonomy, or "folksonomy", became one of the defining characteristics of the Web 2.0 Era. Not only had we democratized information, we had democratized the organization of information.
 
@@ -132,6 +134,8 @@ There's one particular use of this that I want to explore in depth: Facebook's g
 This particularly progressive social networking site offered these options for gender. This is a lot of options, but it reveals a paradox: the more options you provide, the more you appear to be excluding -- if genderqueer can make the list, why not pangender? Why should use a term that's pretty close in definition but uses terms that make me uncomfortable? 
 
 It's kind of a mess from a UI perspective, too -- there are a lot of items and they don't seem to be in any particular order. There are a couple of redundant or ambiguous items that would be a lot more straightforward if you could combine terms. 
+
+(facebook gender options)
 
 But when Facebook adopted the tag-based gender options, they didn't just drop in a jQuery library and call it a day; there are specific design choices being made in this form. Here are a few of them:
 
