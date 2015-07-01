@@ -8,19 +8,16 @@ Categories and hierarchies are built into our culture at the lowest levels: gend
 
 Given that this is a room full of programmers, I think you'll agree that the only thing we love more than making rules is making rules for making rules. So we make formal systems to manage our hierarchies.
 
-(linnaeus-era chart)
-
+![linnaeus chart](img/linnaeus.png)
 These systems reflect the times in which they are created. Linnaeus' hierarchy of life -- kingdom phylum class order family genus species -- is an echo of king prince duke count baron knight peasant. What would a taxonomy look like if we created it today? Allow me to thought-lead for a moment:
 
-(picture of shingy)
+![shingy](img/shingy.jpg)
 
 The information age promises the democratization and decentralization of media, with news and ideas and conversation spreading across the world in real time. Hierarchy and linear thought have no place in cyberspace. The world of information is coming in from every direction at once -- its a network where every node is connected. 
 
 How do we organize knowledge in 2015? The hashtag.
 
 ## Definition 
-
-(each property is a slide)
 
 First, let's get our terms straight. Many of us already have a pretty good idea of what a hashtag _is_, but I want to focus on what I consider to be the three essential properties of hashtags:
 
@@ -32,7 +29,7 @@ First, let's get our terms straight. Many of us already have a pretty good idea 
 ## History
 Let's start with tags as a categorization system. The concepts of relational categorization predates the web and even computers by hundreds of years. I don't have time for quite that much background. Instead, let's go to the library.
 
-(library)
+![library](img/library.jpg)
 
 Libraries are kind of like an analog database, right? They contain information, and they organize it in a way that you can find it. But books take up physical space. A book needs to _be_ somewhere. If you have to put a book _somewhere_ its often helpful to put it with other books of the same kind -- then you don't need to know exactly where every book is, just how to find the category.
 
@@ -40,7 +37,7 @@ If you're the super-organized type, like I imagine most librarians are, you'd or
 
 The problem with this is that you can only impose one hierarchy at a time; it must necessarily be compromised. If you want arts and technology to be top-level classifications, that means that architecture and structural engineering books could be on opposite sides of the library. What do you do with topics that don't fit into your hierarchy?
 
-(subject heading map)
+![LCSH](img/lcsh.jpg)
 
 You create a system of categorization on top of your hierarchy, with a vocabulary of keywords to mark attributes of the item that you couldn't express in the hierarchy. For example, the library of congress *classifications* is the hierarchy that dictates where books are located. The *subject headings* map topics to the different branches of the classifications hierarchy where that topic is discussed. 
 
@@ -75,8 +72,7 @@ AND tags LIKE "%mustache%"
 
 I don't have enough screen space to show the version of this with JOINs.
 
-(intersection venn diagrams)
-
+![intersection](img/venn-intersect.png)
 Let's flip our perspective around and look at this from the trait's perspective instead of the person's. Before we would say that Anita, Charles, David and Joe all have blond hair; instead, we'll say the set of people with blond hair includes Anita, Charles, David and Joe. The set of people with glasses are Claire, Joe, Paul, and Tom. The *intersection* of blondes and people wearing glasses is Joe.
 
 If you're anything like me you're probably thinking "this game needs more features". Its already based around logical `AND` -- let's add `OR` and `NOT`. That's just what I did. Now we can express complex, nested selections, like:
@@ -87,8 +83,11 @@ If you're anything like me you're probably thinking "this game needs more featur
      (not mustache))
 ```
 
-(union and complement venn diagrams)
-There are set theory equivalences here, too: Unions  are both of the sets combined, both of the circles together. They correspond to logical `OR`. And set complements, the area outside of the circles, correspond to logical `NOT`.
+![union](img/venn-union.png)
+There are set theory equivalences here, too: Unions  are both of the sets combined, both of the circles together. They correspond to logical `OR`. 
+
+![complement](img/venn-complement.png)
+And set complements, the area outside of the circles, correspond to logical `NOT`.
 
 What does this have to do with hashtags or humans? Well, when we see tags in the wild, we tend to see them in clusters -- Twitter's length constraints prevent exhaustive tagging, but most sites do not, and posts will have many tags. Likewise, in many cases a tag will be associated with many posts. There's a many-to-many relationship between posts and tags. This is the same relationship model Guess Who? uses for people and their traits.
 
@@ -99,14 +98,14 @@ Let's fast-forward a little bit to the early 2000s, the Web 2.0 Years. The inter
 
 The library model doesn't quite work for the social web. In a typical library, the hierarchy and the keyword vocabulary are fixed, and the collection is curated by the librarians. A patron cannot add books to the collection, nor can they alter the classifications or keyword vocabulary.
 
-(tag cloud)
+![tag cloud](img/tag-cloud.png)
 
 But the photos on flickr, or the links on delicious belong to the community -- so why shouldn't the vocabulary of categorization also belong the them? And thus the rise of user-generated taxonomy, or "folksonomy", became one of the defining characteristics of the Web 2.0 Era. Not only had we democratized information, we had democratized the organization of information.
 
 Also, we stopped calling them "keywords" -- probably because of shameful associations with AOL -- and started calling them tags.
 
 ## pros/cons of folksonomy
-[redundant tags, tags as post metadata](http://www.metafilter.com/13955/Let-Slip-the-Blogs-of-War)
+![redundant tags, tags as post metadata](img/warblog.png)
 
 Let's take a look at a typical metafilter post from 2002. This post was tagged #war #blog #blogs #warblog #warblogs and #TimCavanaugh; sometime later it was tagged with #brokenlink. First, let us admire the different kinds of information that the tags cover: tim cavanaugh is the author, and warblogs are the subject. #brokenlink is a site-wide convention for posts with broken links -- the tags on this post are used both for the content of the linked article and to describe the state of the link itself.
 
@@ -116,11 +115,29 @@ On the other hand, a centralized system can have rules for dealing with synonyms
 
 ## Dealing with downsides
 ### Parallel systems
-(image of askme sidebar with popular tags and complete category list)
+![askme sidebar with categories and tags](img/askme-sidebar.png)
+
 
 One solution for this is an ontology that includes both a fixed vocabulary of categories, often mapping to classical hierarchies, and an open vocabulary of non-hierarchical tags. This is the approach that's used in wordpress blogs and ask metafilter questions. 
 
-(dom elements on left side, class names on right side)
+![html tag list](img/html-tags.png)
+
+```
+.actions
+.active
+.app-logo
+.app-message
+.app-toggle
+.app-toggle__wrap
+.apply
+.axis-label
+.axis-x-label
+.back
+.bar-name
+.bar-top-label
+.bar-value
+.bars-wrapper
+```
 
 This is also the approach taken by browsers. We have a fixed vocabulary of general-purpose tags -- some of them have special functionality but most of them are just common classifictions of containers. But we can also create our own terms with meaning specific to the site. Every element on the page must have one and only tag type, but they can have as few or as many classes as they want. 
 
@@ -129,13 +146,13 @@ Another common solution is to have user-defined tags as the sole form of taxonom
 
 There's one particular use of this that I want to explore in depth: Facebook's gender selector. Before this came out, most of the gender options I had seen were either strictly male/female or freeform text fields. A few offered more choices.
 
-(fetlife gender options)
+![fetlife gender options](img/fetlife.png)
 
 This particularly progressive social networking site offered these options for gender. This is a lot of options, but it reveals a paradox: the more options you provide, the more you appear to be excluding -- if genderqueer can make the list, why not pangender? Why should use a term that's pretty close in definition but uses terms that make me uncomfortable? 
 
 It's kind of a mess from a UI perspective, too -- there are a lot of items and they don't seem to be in any particular order. There are a couple of redundant or ambiguous items that would be a lot more straightforward if you could combine terms. 
 
-(facebook gender options)
+![Facebook gender options](img/facebook_gender.gif)
 
 But when Facebook adopted the tag-based gender options, they didn't just drop in a jQuery library and call it a day; there are specific design choices being made in this form. Here are a few of them:
 
@@ -151,7 +168,7 @@ A third approach is that you can use human moderators to enforce community stand
 
 We'll take it as given that community management is necessary for dealing with spam and trolls. Sites like Instagram that have policies against nudity and illegal activity blacklist tags like #pussy and #weed from search results. (They also blocked the eggplant and peach emojis for similar reasons.) Things get a little more complicated when you regulate for quality.
 
-[death of meta tags](http://blog.stackoverflow.com/2010/08/the-death-of-meta-tags/)
+![death of meta tags](img/meta-tagging.png)
 
 Knowledge bases like stack overflow and wikipedia depend on their posts being well organized for both editors and readers, and managing metadata is as much a part of that as managing content. Editorial policy isn't just normalizing #blogs and #blogging to #blog, it also involves choosing what information is purposefully not captured. This post is discussing why qualitative tags like #best-practices don't fit the mission of stack overflow, and why they have been removed. They're not imposing a system as rigid as a formally defined vocabulary, but they're far from the anarchy of pure folksonomy. These sites compromise expressivity to provide more important features.
 
@@ -160,11 +177,11 @@ But in many cases freedom of expression is the feature. Twitter could do a lot t
 # channels
 ## history
 
-[first use of hashtag on twitter](https://twitter.com/chrismessina/status/223115412)
+![first use of hashtag on twitter](img/first-hashtag.png)
 
 We've gotten this far and we still haven't answered the biggest question of them all: how did the hashtag get its hash? Here's the TL;DR:
 
-[# because of IRC convention and it was easy to type on T-9 phones in 2007! (Pre-touch!)](https://twitter.com/chrismessina/status/386127369603256320)
+![# because of IRC convention and it was easy to type on T-9 phones in 2007! (Pre-touch!)](img/hashtag-tldr.png)
 
 A little background: IRC is a decentralized chatroom protocol that predates the web. The rooms are called channels and public channels are marked with a hash symbol; on many servers any user can create a channel. Channels _are_ a form of categorization, but channels are intended to be a single, long-running discussion with real-time participation. 
 
@@ -174,8 +191,7 @@ In 2006, prior to the first twitter hashtags, Jaiku, a now-forgotten microbloggi
 
 When hashtags came to Twitter, there was no native support for this sort of thing. Much like mentions and retweets, they began as conventions that would only later be proper features. This meant that early hashtags functioned like keywords for twitter's existing search system, which was completely agnostic towards search terms. 
 
-(proposed hashtag syntax from messina's blog)
-[Groups for Twitter; or A Proposal for Twitter Tag Channels](http://factoryjoe.com/blog/2007/08/25/groups-for-twitter-or-a-proposal-for-twitter-tag-channels/)
+![proposed hashtag syntax from messina's blog](img/tag-syntax.png)
 
 There was a whole syntax for messaging and subscribing to tags proposed, but it was never implemented; nor did twitter ever distinguish between posts starting with tags vs those containing them, as they would with replies and mentions.
 
@@ -188,11 +204,11 @@ When the digerati of 2007 were first exploring the modering hashtag, there was a
 
 ## Vernacular
 
-(willow pape "hashtag: ratchet.")
+![willow pape "hashtag: ratchet."](img/willow-pape.jpg)
 
 That's not quite how it worked out. Hashtags couldn't live up to their utopian vision, but they've become much more a part of society than they could have imagined. Tags are not only a means of conversation but now also _part of_ conversation. 
 
-(blog tags as parenthetical aside)
+![blog tags as parenthetical aside](img/tag-footnotes.png)
 
 Because there are no _rules_ for tags, our usage can reflect all kinds of purposes -- we develop idioms for hashtags. They're used as interjections, parenthetical asides, and as a means to #mock the #overuse of #hashtags.
 
