@@ -200,11 +200,11 @@ Because there are no _rules_ for tags, our usage can reflect all kinds of purpos
 
 This is all powered by the duality of hashtags as a collection of ideas and the channel for broadcasting them. I would bet that very few of us participate in any hashtags on a daily basis, but everyone here is familiar with them as a presence in society. (If not, the last 15 minutes have probably been very confusing.)
 
-(#TheDress)
+![#TheDress](img/thedress.jpg)
 
 Tags can be trite.
 
-(#BlackLivesMatter grafitti on confederate memorial)
+![#BlackLivesMatter grafitti on confederate memorial](img/blm.jpg)
 
 Tags can be meaningful.
 
