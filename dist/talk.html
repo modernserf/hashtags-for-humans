@@ -25,6 +25,14 @@
       font-size: 30px;
     }
 
+    code .remark-code-line {
+      font-size: 2em
+    }
+
+    code.css .remark-code-line {
+      font-size: 1.3em
+    }
+
     </style>
   </head>
   <body>
@@ -122,14 +130,17 @@ When you're asking a succession of yes-or-no questions as you do in this game, y
 This is how we could express our questions this in javascript:
 
 ---
-```
-people.filter((p) => p.tags.blond && p.tags.glasses)
+```js
+people.filter(function (p) {
+  return p.tags.blond &&
+    p.tags.glasses;
+});
 ```
 ???
 
 And this is one way to say that in SQL:
 ---
-```
+```sql
 SELECT *
 FROM people
 WHERE tags LIKE "%blond%"
@@ -184,7 +195,7 @@ One solution for this is an ontology that includes both a fixed vocabulary of ca
 ---
 ![html tag list](img/html-tags.png)
 
-```
+```css
 .actions        .active           .app-logo
 .app-message    .app-toggle       .app-toggle__wrap
 .apply          .axis-label       .axis-x-label
@@ -238,7 +249,7 @@ Knowledge bases like stack overflow and wikipedia depend on their posts being we
 But in many cases freedom of expression is the feature. Twitter could do a lot to improve the quality of discourse on its service but removing subjective hashtags ain't it. The restrictions that are useful for a purpose-made knowledge base are detrimental to a general means of communication.
 
 ---
-# Channels
+# Conversational
 ![first use of hashtag on twitter](img/first-hashtag.png)
 ???
 

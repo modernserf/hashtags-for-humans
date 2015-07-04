@@ -2,8 +2,7 @@
 "use strict";
 
 var webpack =   require('webpack'),
-    autoprefixer = require('autoprefixer-core'),
-    postCSSLocal = require('postcss-local-scope');
+    autoprefixer = require('autoprefixer-core');
 
 // definePlugin takes raw strings and inserts them, so you can put strings of JS if you want.
 var envPlugin = new webpack.DefinePlugin({
@@ -33,18 +32,19 @@ module.exports = {
         contentBase: "./dist",
         hot: true,
         port: 4000,
+        historyApiFallback: true,
         info: false
     },
     module: {
         loaders: [
-            {test: /\.css$/, loaders: ["style","css?localIdentName=[name]__[local]___[hash:base64:5]","postcss"]},
+            {test: /\.css$/, loaders: ["style","css?localIdentName=[local]___[hash:base64:5]","postcss"]},
             {test: /\.js$/, exclude: /node_modules/, loader: babelConfig},
             {test: /\.jsx$/, loaders: ["react-hot", babelConfig] },
             {test: /\.json$/, loader: "json-loader"},
             {test: /\.html$/, loader: "raw"}
         ]
     },
-    postcss: [autoprefixer, postCSSLocal],
+    postcss: [autoprefixer],
     plugins: [
         envPlugin,
         new webpack.HotModuleReplacementPlugin(),
