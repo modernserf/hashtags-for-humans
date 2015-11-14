@@ -1,0 +1,14 @@
+.container {
+    margin: 0 auto;
+    padding: 1em 0;
+    max-width: 1200px;
+}
+
+.controls {
+    flex: 1 0 33%;
+    padding-right: 20px;
+}
+
+.queryContainer {
+    min-height:  200px
+}
